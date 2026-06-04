@@ -3,215 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VIPPLAS Navigation</title>
+    <title>VIPPLAS Navigation & Banner</title>
+    <link rel="stylesheet" href="index.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/webfont/1.6.28/webfontloader.js">
+    
 </head>
-<style>
-   
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-
-.custom-navbar {
-    position: -webkit-sticky; /* Safari support */
-    position: sticky;
-    top: 0;
-    z-index: 1020; /* Safely sits above page body elements */
-    padding: 0.6rem 0;
-    background-color: rgba(255, 255, 255, 0.9) !important;
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
-    transition: all 0.3s ease-in-out;
-}
-
-/* Brand Logo Text & Sizing */
-.custom-navbar .navbar-brand {
-    font-size: 1.2rem;
-    letter-spacing: 0.5px;
-}
-
-
-
-.custom-navbar .custom-logo {
-    height: 82px; 
-    width: 80px;  
-    object-fit: contain;
-}
-
-
-
-.custom-navbar .navbar-nav .nav-link {
-    color: #4a5568 !important; /* Slate gray styling */
-    font-size: 0.95rem;
-    position: relative;
-    transition: color 0.25s ease;
-}
-
-/* Hover & Active Link Color state */
-.custom-navbar .navbar-nav .nav-link:hover,
-.custom-navbar .navbar-nav .nav-link.active {
-    color: #0d6efd !important; /* Bootstrap primary blue */
-}
-
-
-.custom-navbar .dropdown-toggle::after {
-    display: none !important;
-}
-
-
-.custom-navbar .btn-primary {
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.custom-navbar .btn-primary:hover {
-    transform: translateY(-1px);
-    box-shadow: 0 4px 12px rgba(13, 110, 253, 0.3) !important;
-}
-
-
-.custom-navbar .dropdown-menu {
-    background-color: #ffffff;
-    border-radius: 10px;
-    padding: 0.4rem;
-    min-width: 180px;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08) !important;
-}
-
-.custom-navbar .dropdown-item {
-    color: #4a5568;
-    font-weight: 500;
-    font-size: 0.9rem;
-    transition: all 0.2s ease;
-}
-
-.custom-navbar .dropdown-item:hover {
-    background-color: rgba(13, 110, 253, 0.07);
-    color: #0d6efd;
-}
-
-.custom-navbar .dropdown-divider {
-    border-top: 1px solid rgba(0, 0, 0, 0.06);
-}
-
-
-
-@media (max-width: 991.98px) {
-    .custom-navbar .navbar-collapse {
-        position: fixed;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        width: 280px; /* Width of the right sidebar drawer */
-        height: 100vh;
-        background: #ffffff;
-        margin-top: 0;
-        padding: 5rem 1.5rem 1.5rem 1.5rem; /* Padding at top leaves space for a close or nav area */
-        box-shadow: -4px 0 24px rgba(0, 0, 0, 0.15);
-        z-index: 1019;
-        overflow-y: auto;
-        
-       
-        transition: transform 0.3s ease-in-out, visibility 0.3s ease-in-out;
-    }
-    
-
-    .custom-navbar .navbar-collapse:not(.show) {
-        transform: translateX(100%);
-        display: block !important; 
-        visibility: hidden;
-    }
-    
-    /* When active/show class is attached by Bootstrap */
-    .custom-navbar .navbar-collapse.show {
-        transform: translateX(0);
-        visibility: visible;
-    }
-
-    .custom-navbar .navbar-nav {
-        align-items: flex-start !important;
-    }
-    
-    .custom-navbar .nav-item {
-        width: 100%;
-        margin-bottom: 0.5rem;
-    }
-
-    /* Sub-dropdown menus inside the mobile sidebar */
-    .custom-navbar .dropdown-menu {
-        position: static !important;
-        float: none;
-        box-shadow: none !important;
-        background-color: rgba(0, 0, 0, 0.02);
-        padding-left: 1rem;
-        margin-top: 0.25rem;
-    }
-}
-
-
-@media (min-width: 992px) {
-    .custom-navbar .navbar-brand {
-        font-size: 1.35rem;
-    }
-
-    .custom-navbar .custom-logo {
-        height: 38px; 
-    }
-
-   
-    .custom-navbar .navbar-nav .nav-link::after {
-        content: '';
-        position: absolute;
-        width: 0;
-        height: 2px;
-        bottom: -2px;
-        left: 1rem;
-        background-color: #0d6efd;
-        transition: width 0.25s ease;
-    }
-
-    .custom-navbar .navbar-nav .nav-link:hover::after,
-    .custom-navbar .navbar-nav .nav-link.active::after {
-        width: calc(100% - 2rem);
-    }
-
-    
-    .custom-navbar .dropdown-menu {
-        display: block;
-        opacity: 0;
-        visibility: hidden;
-        transform: translateY(10px);
-        transition: all 0.25s ease;
-    }
-
-    .custom-navbar .dropdown:hover .dropdown-menu {
-        opacity: 1;
-        visibility: visible;
-        transform: translateY(0);
-    }
-}
-</style>
 <body>
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top custom-navbar">
   <div class="container d-flex align-items-center justify-content-between flex-nowrap w-100">
-    
     <a class="navbar-brand d-flex align-items-center fw-bold text-uppercase tracking-wider flex-shrink-0 m-0" href="#">
-      <img src="download (21).png" alt="VIPPLAS Logo" class="me-2 custom-logo">
-      <span class="text-primary">VIP</span>PLAS
+      <img src="download (21).png" alt="VIPPLAS Logo" class="me-2 custom-logo rounded">
+      <span class="text-primary">MYTH</span>GLORY
     </a>
-
     <div class="collapse navbar-collapse" id="navbarProfessional">
       <ul class="navbar-nav ms-auto align-items-center pe-lg-3">
-        
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle fw-medium px-3" href="#" id="contactDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Contact Us
-          </a>
-          <ul class="dropdown-menu border-0 shadow" aria-labelledby="contactDropdown">
+          <a class="nav-link dropdown-toggle fw-medium px-3" href="#" id="contactDropdown" role="button">Contact Us</a>
+          <ul class="dropdown-menu border-0 shadow">
             <li><a class="dropdown-item py-2 px-3 rounded" href="#">Facebook</a></li>
             <li><a class="dropdown-item py-2 px-3 rounded" href="#">Twitter</a></li>
             <li><a class="dropdown-item py-2 px-3 rounded" href="#">Instagram</a></li>
@@ -219,53 +29,41 @@
             <li><a class="dropdown-item py-2 px-3 rounded" href="#">Location</a></li>
           </ul>
         </li>
-
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle fw-medium px-3" href="#" id="aboutDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            About Us
-          </a>
-          <ul class="dropdown-menu border-0 shadow" aria-labelledby="aboutDropdown">
+          <a class="nav-link dropdown-toggle fw-medium px-3" href="#" id="aboutDropdown" role="button">About Us</a>
+          <ul class="dropdown-menu border-0 shadow">
             <li><a class="dropdown-item py-2 px-3 rounded" href="#">School Info</a></li>
-            <li><a class="dropdown-item py-2 px-3 rounded" href="#">course</a></li>
+            <li><a class="dropdown-item py-2 px-3 rounded" href="#">Course</a></li>
             <li><a class="dropdown-item py-2 px-3 rounded" href="#">Teachers</a></li>
             <li><hr class="dropdown-divider my-2"></li>
             <li><a class="dropdown-item py-2 px-3 rounded" href="#">Other</a></li>
           </ul>
         </li>
-
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle fw-medium px-3" href="#" id="servicesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Services
-          </a>
-          <ul class="dropdown-menu border-0 shadow" aria-labelledby="servicesDropdown">
+          <a class="nav-link dropdown-toggle fw-medium px-3" href="#" id="servicesDropdown" role="button">Services</a>
+          <ul class="dropdown-menu border-0 shadow">
             <li><a class="dropdown-item py-2 px-3 rounded" href="#">Online Class</a></li>
             <li><a class="dropdown-item py-2 px-3 rounded" href="#">Class</a></li>
-            <li><a class="dropdown-item py-2 px-3 rounded" href="#">new Course</a></li>
+            <li><a class="dropdown-item py-2 px-3 rounded" href="#">New Course</a></li>
             <li><hr class="dropdown-divider my-2"></li>
             <li><a class="dropdown-item py-2 px-3 rounded" href="#">Other</a></li>
           </ul>
         </li>
-
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle fw-medium px-3" href="#" id="coursesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            courses
-          </a>
-          <ul class="dropdown-menu border-0 shadow" aria-labelledby="coursesDropdown">
+          <a class="nav-link dropdown-toggle fw-medium px-3" href="#" id="coursesDropdown" role="button">Courses</a>
+          <ul class="dropdown-menu border-0 shadow">
             <li><a class="dropdown-item py-2 px-3 rounded" href="#">Web Development</a></li>
             <li><a class="dropdown-item py-2 px-3 rounded" href="#">UI/UX Design</a></li>
             <li><a class="dropdown-item py-2 px-3 rounded" href="#">Cisco Packet Tracer</a></li>
             <li><a class="dropdown-item py-2 px-3 rounded" href="#">Basic Computer</a></li>
             <li><a class="dropdown-item py-2 px-3 rounded" href="#">Basic Programming</a></li>
             <li><hr class="dropdown-divider my-2"></li>
-            <li><a class="dropdown-item py-2 px-3 rounded" href="#">other</a></li>
+            <li><a class="dropdown-item py-2 px-3 rounded" href="#">Other</a></li>
           </ul>
         </li>
-
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle fw-medium px-3" href="#" id="timetableDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            timetable
-          </a>
-          <ul class="dropdown-menu border-0 shadow" aria-labelledby="timetableDropdown">
+          <a class="nav-link dropdown-toggle fw-medium px-3" href="#" id="timetableDropdown" role="button">Timetable</a>
+          <ul class="dropdown-menu border-0 shadow">
             <li><a class="dropdown-item py-2 px-3 rounded" href="#">3:00 PM - 4:00 PM (M-W-F)</a></li>
             <li><a class="dropdown-item py-2 px-3 rounded" href="#">10:00 AM - 11:00 AM (T-Th)</a></li>
             <li><a class="dropdown-item py-2 px-3 rounded" href="#">2:00 PM - 3:00 PM (T-Th)</a></li>
@@ -273,21 +71,70 @@
             <li><a class="dropdown-item py-2 px-3 rounded" href="#">Other</a></li>
           </ul>
         </li>
-
       </ul>
     </div>
-
     <div class="d-flex align-items-center flex-shrink-0 ms-auto style-button-group" style="z-index: 1021;">
       <a class="btn btn-sm btn-primary rounded-pill px-3 shadow-sm fw-medium me-2" href="#">Login</a>
       <a class="btn btn-sm btn-outline-primary rounded-pill px-3 shadow-sm fw-medium me-2 d-none d-sm-inline-block" href="#">Sign in</a>
-      
       <button class="navbar-toggler border-0 shadow-none p-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarProfessional" aria-controls="navbarProfessional" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
     </div>
-    
   </div>
 </nav>
+
+<div class="container-fluid p-0 w-100">
+    <div class="animated-banner shadow-sm">
+        <div class="banner-slideshow"></div>
+        <div class="banner-overlay"></div>
+        <div class="banner-content d-flex align-items-center text-center text-white p-4">
+            <div class="container-fluid py-5">
+                <h1 class="display-4 fw-bold text-white mb-3">Welcome to VIPPLAS</h1>
+                <p class="col-md-8 fs-4 mx-auto text-light opacity-75 mb-4">
+                    Advance your career with elite tech courses. Experience modern web development, networking, and UI/UX engineering with expert mentorship.
+                </p>
+                <div class="d-grid gap-2 d-sm-flex justify-content-sm-center mt-2">
+                    <button class="btn btn-primary btn-lg px-4 gap-3 rounded-pill shadow" type="button">Get Started</button>
+                    <button class="btn btn-outline-light btn-lg px-4 rounded-pill" type="button">Learn More</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="rector-section">
+    <div class="rector-flex-container">
+        
+        <div class="image-card-wrapper">
+            <div class="profile-card">
+                <img src="https://i.pinimg.com/736x/61/aa/58/61aa585c927927cf5f352355f4f5c09b.jpg" alt="H.E. Prof. Chet Chealy" class="profile-pic">
+            </div>
+            <h3 class="profile-name">MR.LOK</h3>
+        </div>
+
+        <div class="text-info-block">
+            <h5 class="sub-heading">Welcome to Myth Glory</h5>
+            <h2 class="main-title">Message From <span>The Dictator</span></h2>
+            
+            <p class="quote-text">
+                Our mission is to provide high-quality education that empowers students with knowledge, skills, and values necessary to become responsible citizens and lifelong learners.
+            </p>
+            
+            <p class="body-desc">
+               Welcome to Myth Glory School, a place where students are inspired to learn, grow, and achieve their full potential. Our school is dedicated to providing quality education in a safe, supportive, and inclusive environment. We focus on academic excellence, character development, and preparing students for future success.
+
+            </p>
+            
+            <a href="#" class="read-more-btn">
+                Read Full Message 
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
+                </svg>
+            </a>
+        </div>
+
+    </div>
+</div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
