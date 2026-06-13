@@ -1,0 +1,204 @@
+/* Premium Typographic System & Palette Overrides */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+:root {
+    --bs-primary: #2563eb;
+    --bs-primary-rgb: 37, 99, 235;
+    --transition-base: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background-color: #f8fafc;
+    color: #1e293b;
+}
+
+/* Navbar Tuning */
+.store-navbar {
+    backdrop-filter: blur(12px);
+    background-color: rgba(255, 255, 255, 0.9) !important;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.nav-link {
+    font-weight: 500;
+    color: #475569 !important;
+    transition: var(--transition-base);
+}
+
+.nav-link:hover, .nav-link.active {
+    color: var(--bs-primary) !important;
+}
+
+/* Dropdown Custom Theme Rules */
+.dropdown-menu {
+    padding: 0.5rem;
+    border-radius: 12px;
+    margin-top: 10px !important;
+}
+
+.dropdown-item {
+    font-weight: 500;
+    border-radius: 8px;
+    padding: 0.6rem 1.2rem;
+    color: #334155;
+    transition: var(--transition-base);
+}
+
+.dropdown-item:hover, .dropdown-item.active {
+    background-color: #eff6ff;
+    color: var(--bs-primary);
+}
+
+/* Cart Activation Button */
+.btn-cart {
+    font-weight: 600;
+    box-shadow: 0 4px 14px rgba(37, 99, 235, 0.2);
+}
+
+/* Hero Section Aesthetic Polish */
+.hero-section {
+    min-height: 80vh;
+    background: radial-gradient(circle at 85% 20%, rgba(37, 99, 235, 0.06), transparent 45%);
+}
+
+.fw-extrabold { font-weight: 800; }
+.fw-black { font-weight: 900; }
+
+.hero-img-placeholder {
+    width: 400px;
+    height: 400px;
+    background-image: url('https://images.unsplash.com/photo-1472851294608-062f824d286b?auto=format&fit=crop&w=600&q=80');
+    background-size: cover;
+    background-position: center;
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.06);
+    animation: waveMorph 8s ease-in-out infinite alternate;
+    z-index: 2;
+    position: relative;
+}
+
+@keyframes waveMorph {
+    0% { border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; }
+    100% { border-radius: 50% 50% 30% 70% / 50% 60% 40% 50%; }
+}
+
+/* Advanced Search Layout Elements */
+.search-input-group {
+    display: flex;
+    background-color: #fff;
+    border-radius: 99px;
+    border: 1px solid #e2e8f0;
+    overflow: hidden;
+    padding: 4px;
+    transition: var(--transition-base);
+}
+
+.search-input-group:focus-within {
+    border-color: var(--bs-primary);
+    box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.15) !important;
+}
+
+.input-group-text-custom {
+    background: none;
+    border: none;
+    display: flex;
+    align-items: center;
+    padding-left: 1.2rem;
+    color: #94a3b8;
+    font-size: 1.1rem;
+}
+
+.search-input-group .form-control {
+    border: none;
+    background: none;
+    box-shadow: none !important;
+    padding: 0.75rem 1rem;
+    font-weight: 500;
+}
+
+/* Elegant Product Card Upgrades */
+.product-card {
+    background: #ffffff;
+    border-radius: 16px;
+    transition: var(--transition-base);
+}
+
+.product-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 25px -5px rgba(0,0,0,0.05), 0 10px 10px -5px rgba(0,0,0,0.02) !important;
+}
+
+.card-img-container {
+    height: 240px;
+    background-color: #f8fafc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+    border-radius: 12px;
+    margin: 8px;
+}
+
+.card-img-container img {
+    max-height: 85%;
+    max-width: 85%;
+    object-fit: contain;
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.product-card:hover .card-img-container img {
+    transform: scale(1.05);
+}
+
+/* Utilities */
+.perk-icon-box {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    font-size: 1.3rem;
+}
+
+.cart-item-img {
+    width: 65px;
+    height: 65px;
+    object-fit: contain;
+    background-color: #f1f5f9;
+    border-radius: 10px;
+    padding: 4px;
+}
+
+.qty-control-btn {
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    padding: 0;
+}
+
+/* Footer Interaction Highlights */
+.footer-link {
+    transition: var(--transition-base);
+}
+.footer-link:hover {
+    color: #fff !important;
+    padding-left: 5px;
+}
+.footer-social-icon {
+    font-size: 1.25rem;
+    transition: var(--transition-base);
+}
+.footer-social-icon:hover {
+    color: var(--bs-primary) !important;
+}
