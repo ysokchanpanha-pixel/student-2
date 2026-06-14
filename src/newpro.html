@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MYTHGLORY — Premium Beverages & More</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght=300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top custom-navbar">
+    <div class="container d-flex align-items-center justify-content-between flex-nowrap w-100">
+      <a class="navbar-brand d-flex align-items-center fw-bold text-uppercase tracking-wider flex-shrink-0 m-0" href="#">
+        <img src="https://i.pinimg.com/736x/23/4c/52/234c52ee1af62a701565d122f885120a.jpg" onerror="this.style.display='none'" alt="MYTHGLORY Logo" class="me-2 custom-logo rounded">
+        <span class="text-primary">Drink</span>Shop
+      </a>
+
+      <div class="collapse navbar-collapse" id="navbarProfessional">
+        <ul class="navbar-nav ms-auto align-items-center pe-lg-3">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle fw-medium px-3" href="#" id="contactDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">ទំនាក់ទំនង</a>
+            <ul class="dropdown-menu dropdown-menu-start dropdown-menu-lg-end border-0 shadow">
+              <li><a class="dropdown-item py-2 px-3 rounded" href="#"><i class="bi bi-facebook me-2"></i>Facebook</a></li>
+              <li><a class="dropdown-item py-2 px-3 rounded" href="#"><i class="bi bi-twitter-x me-2"></i>Twitter</a></li>
+              <li><a class="dropdown-item py-2 px-3 rounded" href="#"><i class="bi bi-instagram me-2"></i>Instagram</a></li>
+              <li><hr class="dropdown-divider my-2"></li>
+              <li><a class="dropdown-item py-2 px-3 rounded" href="#"><i class="bi bi-geo-alt me-2"></i>Location</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle fw-medium px-3" href="#" id="productDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">ផលិតផល</a>
+            <ul class="dropdown-menu dropdown-menu-start dropdown-menu-lg-end border-0 shadow">
+              <li><a class="dropdown-item py-2 px-3 rounded" href="#">ផលិតផលទាំងអស់</a></li>
+              <li><a class="dropdown-item py-2 px-3 rounded" href="#">ផលិតផលថ្មី</a></li>
+              <li><a class="dropdown-item py-2 px-3 rounded" href="#">បញ្ចុះតម្លៃ</a></li>
+              <li><hr class="dropdown-divider my-2"></li>
+              <li><a class="dropdown-item py-2 px-3 rounded" href="#">ផ្សេង...</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle fw-medium px-3" href="#" id="categoryDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">ប្រភេទផលិតផល</a>
+            <ul class="dropdown-menu dropdown-menu-start dropdown-menu-lg-end border-0 shadow">
+              <li><a class="dropdown-item py-2 px-3 rounded category-filter" href="index.html" data-category="all">ភេសជ្ជៈទាំងអស់</a></li>
+              <li><a class="dropdown-item py-2 px-3 rounded category-filter" href="cofe.html" data-category="coffee">កាហ្វេ</a></li>
+              <li><a class="dropdown-item py-2 px-3 rounded category-filter" href="juice.html" data-category="juice">ទឹកផ្លែឈើ</a></li>
+              <li><a class="dropdown-item py-2 px-3 rounded category-filter" href="drinks.html" data-category="canned">ភេសជ្ជៈកំប៉ុង</a></li>
+              <li><a class="dropdown-item py-2 px-3 rounded category-filter" href="#" data-category="best-seller">លក់ដាច់</a></li>
+              <li><hr class="dropdown-divider my-2"></li>
+              <li><a class="dropdown-item py-2 px-3 rounded category-filter" href="#" data-category="other">ផ្សេង...</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle fw-medium px-3" href="#" id="servicesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">សេវាកម្ម</a>
+            <ul class="dropdown-menu dropdown-menu-start dropdown-menu-lg-end border-0 shadow">
+              <li><a class="dropdown-item py-2 px-3 rounded" href="#">Online Class</a></li>
+              <li><a class="dropdown-item py-2 px-3 rounded" href="#">Class</a></li>
+              <li><a class="dropdown-item py-2 px-3 rounded" href="#">New Course</a></li>
+              <li><hr class="dropdown-divider my-2"></li>
+              <li><a class="dropdown-item py-2 px-3 rounded" href="#">Other</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+
+      <div class="d-flex align-items-center flex-shrink-0 ms-auto style-button-group" style="z-index: 1021;">
+        <a class="btn btn-sm btn-primary rounded-pill px-3 shadow-sm fw-medium me-2" href="#">Login</a>
+        <a class="btn btn-sm btn-outline-primary rounded-pill px-3 shadow-sm fw-medium me-2 d-none d-sm-inline-block" href="#">Sign in</a>
+        <button class="navbar-toggler border-0 shadow-none p-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarProfessional" aria-controls="navbarProfessional" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <div class="position-relative w-100 overflow-hidden bg-dark text-white d-flex align-items-center" style="min-height: 80vh; margin-top: 56px;">
+    <div class="position-absolute top-0 start-0 w-100 h-100 banner-slideshow">
+      <div class="slide" style="background-image: url('https://i.pinimg.com/736x/63/cf/b2/63cfb25637b67f9c48469c7974def1f0.jpg');"></div>
+      <div class="slide" style="background-image: url('https://i.pinimg.com/1200x/8d/7f/c3/8d7fc3beed5179fde64091af34b75c60.jpg');"></div>
+      <div class="slide" style="background-image: url('https://i.pinimg.com/1200x/b5/d3/99/b5d399411d5e3894d7f41a35d185d151.jpg');"></div>
+    </div>
+
+    <div class="position-absolute top-0 start-0 w-100 h-100 hero-overlay" style="z-index: 1;"></div>
+
+    <div class="container position-relative py-5 text-center text-md-start" style="z-index: 2;">
+      <div class="row">
+        <div class="col-md-8 col-lg-6">
+          <span class="badge bg-primary px-3 py-2 rounded-pill mb-3 text-uppercase tracking-wider fw-semibold">Now Live</span>
+          <h1 class="display-3 fw-bold mb-3 tracking-tight">Premium Drinks, <br>Delivered <span class="text-info">Fresh</span></h1>
+          <p class="lead text-light opacity-75 mb-4">
+            Discover our full range of coffee, juices, canned beverages and best-sellers — curated for quality and great taste, all in one place.
+          </p>
+          <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+            <button type="button" class="btn btn-info btn-lg px-4 me-md-2 fw-semibold" onclick="document.getElementById('product-search').scrollIntoView({behavior:'smooth', block:'center'}); document.getElementById('product-search').focus();">Explore Now</button>
+            <button type="button" class="btn btn-outline-light btn-lg px-4" onclick="document.getElementById('product-container').scrollIntoView({behavior:'smooth'});">Learn More</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container my-5 text-center">
+    <h1 class="display-5 fw-bold border-bottom d-inline-block pb-2 text-dark">ផលិតផល</h1>
+
+    <div class="row justify-content-center mt-4">
+      <div class="col-md-6 col-11">
+        <div class="input-group shadow-sm rounded-pill overflow-hidden border">
+          <span class="input-group-text bg-white border-0 pe-1"><i class="bi bi-search text-muted"></i></span>
+          <input type="text" id="product-search" class="form-control border-0 ps-2 py-2" placeholder="ស្វែងរកផលិតផល... (Search products)">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Note: Changed row-cols-1 to row-cols-2 below for two cards on mobile -->
+  <div class="container mb-5">
+    <div class="row row-cols-2 row-cols-sm-2 row-cols-md-4 g-3 g-md-4" id="product-container">
+    </div>
+  </div>
+
+  <div class="modal fade" id="productDetailModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content border-0 shadow rounded-4 overflow-hidden">
+        <div class="modal-body p-0">
+          <div class="position-relative">
+            <button type="button" class="btn-close position-absolute top-0 end-0 m-3 bg-white p-2 rounded-circle shadow-sm" data-bs-dismiss="modal" aria-label="Close" style="z-index: 10;"></button>
+          </div>
+          <div class="row g-0" id="modal-dynamic-content">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="bg-dark text-light py-5 mt-5">
+    <div class="container">
+      <div class="row gy-4">
+        <div class="col-md-4">
+          <h5 class="fw-bold mb-3"><span class="text-primary">MYTH</span>GLORY</h5>
+          <p class="text-light opacity-75 small">Your trusted source for premium beverages — coffee, juices, canned drinks and more, delivered with quality you can taste.</p>
+        </div>
+        <div class="col-md-4">
+          <h6 class="fw-bold mb-3">Quick Links</h6>
+          <ul class="list-unstyled small">
+            <li class="mb-2"><a href="#" class="text-light text-decoration-none opacity-75">ផលិតផលទាំងអស់</a></li>
+            <li class="mb-2"><a href="#" class="text-light text-decoration-none opacity-75">ផលិតផលថ្មី</a></li>
+            <li class="mb-2"><a href="#" class="text-light text-decoration-none opacity-75">បញ្ចុះតម្លៃ</a></li>
+            <li class="mb-2"><a href="#" class="text-light text-decoration-none opacity-75">សេវាកម្ម</a></li>
+          </ul>
+        </div>
+        <div class="col-md-4">
+          <h6 class="fw-bold mb-3">ទំនាក់ទំនង</h6>
+          <div class="d-flex gap-3 fs-5">
+            <a href="#" class="text-light opacity-75"><i class="bi bi-facebook"></i></a>
+            <a href="#" class="text-light opacity-75"><i class="bi bi-twitter-x"></i></a>
+            <a href="#" class="text-light opacity-75"><i class="bi bi-instagram"></i></a>
+            <a href="#" class="text-light opacity-75"><i class="bi bi-geo-alt"></i></a>
+          </div>
+        </div>
+      </div>
+      <hr class="border-secondary mt-4">
+      <p class="text-center small text-light opacity-50 mb-0">&copy; 2026 MYTHGLORY. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // 1. Centralized Product Storage Catalog Array
+const products = [
+  {
+    id: "PROD-001",
+    title: "Instant coffee",
+    khmerTitle: "កាហ្វេ",
+    description: "Refreshing authentic flavor, packed in a full case of 24 convenient cans.",
+    price: 8.75,
+    imgSrc: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgNfzK-g9FOqI9CBttc_G93K47VkRgoHPBpBwVSzQHmA&s=10https://camhappymart.com/storage/app/public/product/thumbnail/2025-10-22-68f8b9a2300d0.png"
+  },
+  {
+    id: "PROD-002",
+    title: "Brand: Benchmark USA 250g",
+    khmerTitle: "កាហ្វេប៊ិន",
+    description: "The official national water of Cambodia, offering a smooth and crisp taste profile.",
+    price: 0.75,
+    imgSrc: "https://benchmarkooty.com/wp-content/uploads/2024/04/coffee-nilgiri-benchmark-ooty-filter-coffee-250gm.jpg"
+  },
+  {
+    id: "PROD-003",
+    title: "NESCAFE Classic 200g",
+    khmerTitle: "នេសកាហ្វេ",
+    description: "Crafted with premium ingredients, delivering an ultra-smooth finish in every sip.",
+    price: 11.50,
+    imgSrc: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwpll875f3jwh3B1q5lwUTEL5V7Kb3I6TXAc8QC7rPdlcPBk6dsT6uq9o&s=10"
+  },
+  {
+    id: "PROD-004",
+    title: "Mondulkiri CAFE ",
+    khmerTitle: "កាហ្វេ​​​មណ្ឌលគិរី សំពោច(អារាបីកា+រ៉ូប៉ូស្តារ)",
+    description: "Locally produced mineral water treated with advanced filtration for pure hydration.",
+    price: 0.25,
+    imgSrc: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQkjNFdZMSVo2bI35Hql1_CDLoavkqDHw1UIvmHO2jc0S3d06eO4HVdCRO&s=10"
+  },
+  {
+    id: "PROD-005",
+    title: "MONDULKIRI COFFEE 3 IN 1 ORIGINAL FLAVOUR",
+    khmerTitle: "កាហ្វេ​​​មណ្ឌលគិរី 3 IN 1 រសជាតិដើម",
+    description: "Popular formulation energizer rich in taurine and vital B vitamins.",
+    price: 0.65,
+    imgSrc: "https://aeoncambodia.sgp1.digitaloceanspaces.com/image/catalog/product/8847100501257b.jpg"
+  },
+  {
+    id: "PROD-006",
+    title: "MONDULKIRI COFFEE 100% PURE ARABICA",
+    khmerTitle: "កាហ្វេមណ្ឌលគិរីសុទ្ធ ១០០%",
+    description: "A classic Asian botanical beverage, naturally sweetened to cool you down instantly.",
+    price: 9.20,
+    imgSrc: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7geQaaWjo4Nn7GWO5OHVNvzvh_fuXWr-HXsLW6CVAFA&s=10"
+  },
+  {
+    id: "PROD-007",
+    title: "MONDULKIRI COFFEE SUGAR FREE",
+    khmerTitle: "កាហ្វេ​​​មណ្ឌលគិរី សំពោច(អារាបីកា)",
+    description: "The timeless, delicious flavor of real Coca-Cola enjoyed all around the globe.",
+    price: 0.55,
+    imgSrc: "https://aeoncambodia.sgp1.digitaloceanspaces.com/image/catalog/product/8847100509048bv.jpg"
+  },
+ 
+];
+
+// Fallback placeholder used whenever a product image fails to load
+const FALLBACK_IMG = "https://placehold.co/400x400/eef2f7/64748b?text=No+Image";
+
+// Global state tracking variables
+let activeProductPrice = 0;
+let paymentTimerInterval = null;
+
+// Temporary holder to collect checkout details before local storage write
+let pendingOrderData = null; 
+
+// 2. DOM Rendering Engine Logic Loop Execution
+function renderProducts(filteredProducts = products) {
+  const container = document.getElementById("product-container");
+  if (!container) return;
+
+  if (filteredProducts.length === 0) {
+    container.innerHTML = `<div class="col-12 text-center text-muted my-5">រកមិនឃើញផលិតផលទេ (No products found)</div>`;
+    return;
+  }
+
+  container.innerHTML = filteredProducts.map(product => {
+    const displayHeading = product.khmerTitle
+      ? `<span class="d-block text-secondary small text-truncate mb-1" style="font-size: 0.85rem;">${product.khmerTitle}</span>${product.title}`
+      : product.title;
+
+    return `
+      <div class="col" style="cursor: pointer;" onclick="openProductDetail('${product.id}')">
+        <div class="card h-100 shadow-sm border-0 rounded-3 overflow-hidden">
+          <img src="${product.imgSrc}" onerror="this.onerror=null;this.src='${FALLBACK_IMG}';" class="card-img-top" alt="${product.title}" style="height: 220px; object-fit: cover;">
+          <div class="card-body d-flex flex-column justify-content-between p-3">
+            <div>
+              <h6 class="card-title fw-bold text-dark lh-sm mb-2" style="font-size: 0.95rem; min-height: 2.4rem;">${displayHeading}</h6>
+              <p class="card-text text-muted small mb-3" style="font-size: 0.8rem; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">
+                ${product.description}
+              </p>
+            </div>
+            <div class="mt-auto d-flex align-items-center justify-content-between pt-2 border-top">
+              <span class="card-price fw-bold text-success fs-5">$${product.price.toFixed(2)}</span>
+              <button class="btn btn-sm btn-outline-primary px-2 py-1" style="font-size: 0.75rem;"><i class="bi bi-eye me-1"></i>Details</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    `;
+  }).join('');
+}
+
+// 3. Live Search Engine Filter Mechanism
+function handleSearch(event) {
+  const query = event.target.value.toLowerCase().trim();
+
+  const filtered = products.filter(product => {
+    return product.title.toLowerCase().includes(query) ||
+           (product.khmerTitle && product.khmerTitle.toLowerCase().includes(query)) ||
+           product.description.toLowerCase().includes(query);
+  });
+
+  renderProducts(filtered);
+}
+
+// 4. Modal Window Generation Handler Logic
+function openProductDetail(productId) {
+  clearInterval(paymentTimerInterval);
+
+  const product = products.find(p => p.id === productId);
+  if (!product) return;
+
+  activeProductPrice = product.price;
+  const modalBody = document.getElementById("modal-dynamic-content");
+
+  modalBody.setAttribute("data-active-id", product.id);
+  modalBody.setAttribute("data-active-title", product.title);
+
+  modalBody.innerHTML = `
+    <div class="col-md-6 border-end bg-light d-flex align-items-center justify-content-center p-4" id="modal-image-panel">
+      <img src="${product.imgSrc}" onerror="this.onerror=null;this.src='${FALLBACK_IMG}';" alt="${product.title}" class="img-fluid rounded" style="max-height: 350px; object-fit: contain;">
+    </div>
+    <div class="col-md-6 p-4 d-flex flex-column justify-content-between" id="modal-interactive-panel">
+      <div>
+        <span class="text-muted small fw-semibold">ID: ${product.id}</span>
+        <h4 class="fw-bold text-dark mt-1 mb-0">${product.khmerTitle || ''}</h4>
+        <h5 class="text-muted mb-3">${product.title}</h5>
+
+        <div class="d-flex align-items-center mb-3">
+          <div class="text-warning me-2">
+            <i class="bi bi-star"></i><i class="bi bi-star"></i><i class="bi bi-star"></i><i class="bi bi-star"></i><i class="bi bi-star"></i>
+          </div>
+          <span class="text-muted small">(0 Reviews | 0 Orders)</span>
+        </div>
+
+        <h3 class="fw-bold text-success mb-4">$${product.price.toFixed(2)}</h3>
+        <p class="text-muted small mb-4">${product.description}</p>
+
+        <div class="d-flex align-items-center mb-4">
+          <span class="me-3 fw-medium">Quantity:</span>
+          <div class="input-group border rounded" style="width: 130px;">
+            <button class="btn btn-link text-decoration-none text-dark border-0 px-2" type="button" onclick="updateQty(-1)">-</button>
+            <input type="text" id="modal-qty" class="form-control text-center border-0 p-1 bg-white fw-bold" value="1" readonly>
+            <button class="btn btn-link text-decoration-none text-dark border-0 px-2" type="button" onclick="updateQty(1)">+</button>
+          </div>
+        </div>
+
+        <div class="mb-4">
+          <span class="text-muted">Total Price:</span>
+          <span class="fw-bold text-dark fs-5 ms-1" id="modal-total-price">$${product.price.toFixed(2)}</span>
+          <span class="text-muted small ms-1">(Tax incl.)</span>
+        </div>
+      </div>
+
+      <div class="d-flex gap-2">
+        <button class="btn btn-dark py-2 px-4 w-50 fw-bold" onclick="startQrPaymentWorkflow()">Buy now</button>
+        <button class="btn btn-success py-2 px-4 w-50 fw-bold" onclick="alert('Added to Cart!')"><i class="bi bi-cart-plus me-2"></i>Add to cart</button>
+      </div>
+    </div>
+  `;
+
+  let modalElement = document.getElementById('productDetailModal');
+  let modalInstance = bootstrap.Modal.getInstance(modalElement);
+  if (!modalInstance) {
+    modalInstance = new bootstrap.Modal(modalElement);
+  }
+  modalInstance.show();
+}
+
+window.updateQty = function(change) {
+  const qtyInput = document.getElementById("modal-qty");
+  const totalDisplay = document.getElementById("modal-total-price");
+  if (!qtyInput || !totalDisplay) return;
+
+  let currentQty = parseInt(qtyInput.value) || 1;
+  currentQty += change;
+
+  if (currentQty < 1) currentQty = 1;
+
+  qtyInput.value = currentQty;
+  totalDisplay.innerText = `$${(activeProductPrice * currentQty).toFixed(2)}`;
+};
+
+// 4b. Inline QR Payment Core Engine View Rendering Mechanics
+window.startQrPaymentWorkflow = function() {
+  const imagePanel = document.getElementById("modal-image-panel");
+  const interactivePanel = document.getElementById("modal-interactive-panel");
+  const modalBody = document.getElementById("modal-dynamic-content");
+  const qtyInput = document.getElementById("modal-qty");
+
+  if (!imagePanel || !interactivePanel || !modalBody || !qtyInput) return;
+
+  const currentQty = parseInt(qtyInput.value) || 1;
+  const totalPrice = (activeProductPrice * currentQty).toFixed(2);
+  const productId = modalBody.getAttribute("data-active-id");
+  const productTitle = modalBody.getAttribute("data-active-title");
+
+  // Find original product data to fetch Khmer titles and descriptions
+  const product = products.find(p => p.id === productId);
+
+  // Package transaction details safely for later storage commitment
+  pendingOrderData = {
+    orderId: "ORD-" + Date.now(),
+    productId: productId,
+    productTitle: productTitle,
+    khmerTitle: product?.khmerTitle || "",
+    quantity: currentQty,
+    totalPrice: parseFloat(totalPrice),
+    timestamp: new Date().toISOString()
+  };
+
+  // Update left panel: display summary order details alongside product image below
+  imagePanel.className = "col-md-6 border-end bg-light p-4 d-flex flex-column justify-content-between";
+  imagePanel.innerHTML = `
+    <div>
+      <span class="badge bg-secondary mb-2">ព័ត៌មានការបញ្ជាទិញ</span>
+      <h5 class="fw-bold text-dark mb-1">${product?.khmerTitle || ''}</h5>
+      <h6 class="text-muted mb-3">${productTitle}</h6>
+      <hr class="my-2 opacity-25">
+      <div class="d-flex justify-content-between small text-muted mb-1">
+        <span>ចំនួន (Quantity):</span>
+        <span class="fw-bold text-dark">${currentQty} ដប/កំប៉ុង/កេះ</span>
+      </div>
+      <div class="d-flex justify-content-between small text-muted">
+        <span>តម្លៃសរុប (Total):</span>
+        <span class="fw-bold text-success">$${totalPrice}</span>
+      </div>
+    </div>
+    <div class="text-center my-auto pt-3">
+      <img src="${product?.imgSrc}" onerror="this.onerror=null;this.src='${FALLBACK_IMG}';" alt="${productTitle}" class="img-fluid rounded shadow-sm bg-white p-2" style="max-height: 180px; object-fit: contain;">
+    </div>
+  `;
+
+  const localQrCodeUrl = "photo_2026-05-31_22-01-27.jpg"; 
+
+  // Update right panel: show your customized QR code and action buttons
+  interactivePanel.innerHTML = `
+    <div class="text-center d-flex flex-column align-items-center justify-content-center h-100 py-2">
+      <div class="mb-2">
+        <span class="badge bg-danger px-3 py-2 rounded-pill fw-bold" style="font-size:0.75rem; letter-spacing:0.5px;">
+          <i class="bi bi-qr-code-scan me-1"></i> KHQR / ABA PAY
+        </span>
+      </div>
+      <p class="text-muted small text-truncate w-100 mb-2">ស្កែនកូដខាងក្រោមដើម្បីទូទាត់ប្រាក់</p>
+
+      <div class="bg-white p-3 border rounded-3 shadow-sm mb-3" style="width:200px; height:200px;">
+         <img src="${localQrCodeUrl}" alt="Scan QR Code to finish transaction" class="img-fluid" style="width:100%; height:100%; object-fit: contain;">
+      </div>
+
+      <div class="mb-2">
+        <div class="text-muted small mb-0">ទឹកប្រាក់ត្រូវទូទាត់សរុប</div>
+        <h3 class="fw-bold text-dark mb-0">$${totalPrice}</h3>
+      </div>
+
+      <div class="alert alert-warning py-1 px-3 border-0 small mb-4 rounded-pill" style="font-size: 0.8rem;">
+         <i class="bi bi-hourglass-split me-1"></i> កូដនេះនឹងហួសកំណត់ក្នុង៖ <span id="payment-timer" class="fw-bold">03:00</span>
+      </div>
+
+      <div class="w-100 d-flex gap-2">
+        <button class="btn btn-outline-danger w-50 py-2 btn-sm fw-semibold" onclick="abortQrPayment('${productId}')">
+          <i class="bi bi-x-circle me-1"></i> បោះបង់ (Cancel)
+        </button>
+        <button class="btn btn-primary w-50 py-2 btn-sm fw-bold" onclick="confirmMockPayment()">
+          <i class="bi bi-check2-circle me-1"></i> ខ្ញុំបានបង់ប្រាក់រួច
+        </button>
+      </div>
+    </div>
+  `;
+
+  beginPaymentCountdownClock(180, productId);
+};
+
+function beginPaymentCountdownClock(secondsLeft, productId) {
+  clearInterval(paymentTimerInterval);
+  let timeRemaining = secondsLeft;
+  const timerDisplay = document.getElementById("payment-timer");
+
+  paymentTimerInterval = setInterval(() => {
+    if (timeRemaining <= 0) {
+      clearInterval(paymentTimerInterval);
+      alert("រយៈពេលទូទាត់ប្រាក់បានអស់កំណត់។ សូមព្យាយាមម្តងទៀត។");
+      abortQrPayment(productId);
+      return;
+    }
+    timeRemaining--;
+    const minutes = Math.floor(timeRemaining / 60).toString().padStart(2, '0');
+    const seconds = (timeRemaining % 60).toString().padStart(2, '0');
+    if (timerDisplay) {
+      timerDisplay.textContent = `${minutes}:${seconds}`;
+    }
+  }, 1000);
+}
+
+window.abortQrPayment = function(productId) {
+  clearInterval(paymentTimerInterval);
+  pendingOrderData = null; // Clear out temporary object data on user abort
+  openProductDetail(productId);
+};
+
+window.confirmMockPayment = function() {
+  clearInterval(paymentTimerInterval);
+
+  // LOCAL STORAGE WRITE LOGIC
+  if (pendingOrderData) {
+    // 1. Pull existing saved array string from LocalStorage, or use an empty array string if empty
+    const existingOrdersJson = localStorage.getItem("customer_orders") || "[]";
+    
+    // 2. Parse into normal JavaScript Array object
+    const currentSavedOrders = JSON.parse(existingOrdersJson);
+    
+    // 3. Insert our freshly prepared checkout payload 
+    currentSavedOrders.push(pendingOrderData);
+    
+    // 4. Overwrite back safely into LocalStorage
+    localStorage.setItem("customer_orders", JSON.stringify(currentSavedOrders));
+    
+    // 5. Free up memory allocations
+    pendingOrderData = null; 
+  }
+
+  alert("🎉 ជោគជ័យ! ប្រព័ន្ធបានទទួលការទូទាត់របស់អ្នករួចរាល់។ ការកម្ម៉ង់ត្រូវបានរក្សាទុក។");
+
+  const modalElement = document.getElementById('productDetailModal');
+  const modalInstance = bootstrap.Modal.getInstance(modalElement);
+  if (modalInstance) {
+    modalInstance.hide();
+  }
+};
+
+// 5. Hooks Setup Initializations Event Routing Pipelines
+window.addEventListener("DOMContentLoaded", () => {
+  renderProducts();
+
+  const searchBar = document.getElementById("product-search");
+  if (searchBar) {
+    searchBar.addEventListener("input", handleSearch);
+  }
+
+  const modalElement = document.getElementById('productDetailModal');
+  if (modalElement) {
+    modalElement.addEventListener('hidden.bs.modal', () => {
+      clearInterval(paymentTimerInterval);
+    });
+  }
+});
+  </script>
+</body>
+</html>
