@@ -1,5 +1,4 @@
 // 1. Centralized Product Storage Catalog Array
-// 1. Centralized Product Storage Catalog Array
 const products = [
   {
     id: "PROD-001",
@@ -7,60 +6,60 @@ const products = [
     khmerTitle: "កម្ពុជាកូឡា ៣៣០មល កេះ",
     description: "Refreshing authentic flavor, packed in a full case of 24 convenient cans.",
     price: 8.75,
-    imgSrc: "image_f9ce4a.png" 
+    imgSrc: "https://camhappymart.com/storage/app/public/product/thumbnail/2025-10-22-68f8b9a2300d0.png"
   },
   {
     id: "PROD-002",
-    title: "Angkor Beer Premium Can 330ml",
-    khmerTitle: "ស្រាបៀរ អង្គរ កំប៉ុង ៣៣០មល",
-    description: "The official national beer of Cambodia, offering a smooth and crisp taste profile.",
+    title: "Angkor water  330ml",
+    khmerTitle: "ទឹកសុទ្ធ​កម្ពុជា",
+    description: "The official national water of Cambodia, offering a smooth and crisp taste profile.",
     price: 0.75,
     imgSrc: "2-2.jpg"
   },
   {
     id: "PROD-003",
-    title: "Hanuman Premium Lager Case",
-    khmerTitle: "ស្រាបៀរ ហនុមាន ឆ្ងាញ់ពិសា កេះ",
+    title: "White cocala 330ml",
+    khmerTitle: "កូកាកូឡា",
     description: "Crafted with premium ingredients, delivering an ultra-smooth finish in every sip.",
     price: 11.50,
     imgSrc: "2024-11-09-672f188d3e162.png"
   },
   {
     id: "PROD-004",
-    title: "Vital Premium Water 500ml",
-    khmerTitle: "ទឹកបរិសុទ្ធ វីតាល់ ៥០០មល",
+    title: "cambodai cola 120ml",
+    khmerTitle: "កម្ពុជាកូឡា 120ml",
     description: "Locally produced mineral water treated with advanced filtration for pure hydration.",
     price: 0.25,
     imgSrc: "2025-10-22-68f8b9d9728ce.webp"
   },
   {
     id: "PROD-005",
-    title: "Bacchus Energy Drink 250ml",
-    khmerTitle: "ភេសជ្ជៈប៉ូវកម្លាំង បាកុស ២៥០មល",
+    title: "Express drink 250ml",
+    khmerTitle: "អេចប្រេស 250ml",
     description: "Popular Korean formulation energizer rich in taurine and vital B vitamins.",
     price: 0.65,
     imgSrc: "1041890.png"
   },
   {
     id: "PROD-006",
-    title: "Yeo's Chrysanthemum Tea Case",
-    khmerTitle: "ភេសជ្ជៈតែផ្កាស្បៃរឿង យ៉ូស កេះ",
+    title: "Coca-Cola original taste bottle 150ml",
+    khmerTitle: "កូកាកូឡា រសជាតិដើម 150ml",
     description: "A classic Asian botanical beverage, naturally sweetened to cool you down instantly.",
     price: 9.20,
     imgSrc: "1631700833UgmvBCqF.jpg"
   },
   {
     id: "PROD-007",
-    title: "Coca-Cola Original Taste Can",
-    khmerTitle: "ភេសជ្ជៈ កូកាកូឡា រសជាតិដើម",
+    title: "Cambodai beer 330ml",
+    khmerTitle: "ស្រាបៀរកម្ពុជា 330ml",
     description: "The timeless, delicious flavor of real Coca-Cola enjoyed all around the globe.",
     price: 0.55,
     imgSrc: "8847100740144.jpg"
   },
   {
     id: "PROD-008",
-    title: "Sting Energy Strawberry 330ml",
-    khmerTitle: "ភេសជ្ជៈ ស្ទីង រសជាតិស្ត្រប៊ឺរី",
+    title: "",
+    khmerTitle: "ភេសជ្ជៈ ប៉ូវកំលាំង​​​​ បាសកាស",
     description: "An electrifying burst of strawberry flavor combined with a powerful energy blend.",
     price: 0.60,
     imgSrc: "18806011010064-500x500.jpg"
@@ -154,7 +153,7 @@ const products = [
     imgSrc: "https://i.pinimg.com/736x/a3/2c/be/a32cbe0fbf478ad276f189643ff96009.jpg"
   },
   {
-    id: "PROD-020", // Fixed duplicate ID bug from original code
+    id: "PROD-020",
     title: "NESCAFÉ Decaf Natural Jar",
     khmerTitle: "កាហ្វេ ណេសកាហ្វេ អត់ជាតិកាហ្វេអ៊ីន",
     description: "All the deep, fully-realized flavor you love from coffee, completely without caffeine.",
@@ -163,8 +162,12 @@ const products = [
   }
 ];
 
-// Global state tracking variable for quantity computation logic inside modern popups
+// Fallback placeholder used whenever a product image fails to load
+const FALLBACK_IMG = "https://placehold.co/400x400/eef2f7/64748b?text=No+Image";
+
+// Global state tracking variables
 let activeProductPrice = 0;
+let paymentTimerInterval = null;
 
 // 2. DOM Rendering Engine Logic Loop Execution
 function renderProducts(filteredProducts = products) {
@@ -177,14 +180,14 @@ function renderProducts(filteredProducts = products) {
   }
 
   container.innerHTML = filteredProducts.map(product => {
-    const displayHeading = product.khmerTitle 
+    const displayHeading = product.khmerTitle
       ? `<span class="d-block text-secondary small text-truncate mb-1" style="font-size: 0.85rem;">${product.khmerTitle}</span>${product.title}`
       : product.title;
 
     return `
       <div class="col" style="cursor: pointer;" onclick="openProductDetail('${product.id}')">
         <div class="card h-100 shadow-sm border-0 rounded-3 overflow-hidden">
-          <img src="${product.imgSrc}" class="card-img-top" alt="${product.title}" style="height: 220px; object-fit: cover;">
+          <img src="${product.imgSrc}" onerror="this.onerror=null;this.src='${FALLBACK_IMG}';" class="card-img-top" alt="${product.title}" style="height: 220px; object-fit: cover;">
           <div class="card-body d-flex flex-column justify-content-between p-3">
             <div>
               <h6 class="card-title fw-bold text-dark lh-sm mb-2" style="font-size: 0.95rem; min-height: 2.4rem;">${displayHeading}</h6>
@@ -206,44 +209,50 @@ function renderProducts(filteredProducts = products) {
 // 3. Live Search Engine Filter Mechanism
 function handleSearch(event) {
   const query = event.target.value.toLowerCase().trim();
-  
+
   const filtered = products.filter(product => {
-    return product.title.toLowerCase().includes(query) || 
+    return product.title.toLowerCase().includes(query) ||
            (product.khmerTitle && product.khmerTitle.toLowerCase().includes(query)) ||
            product.description.toLowerCase().includes(query);
   });
-  
+
   renderProducts(filtered);
 }
 
-// 4. Modal Window Generation Handler Logic (As requested in image template breakdown)
+// 4. Modal Window Generation Handler Logic
 function openProductDetail(productId) {
+  clearInterval(paymentTimerInterval);
+
   const product = products.find(p => p.id === productId);
   if (!product) return;
 
   activeProductPrice = product.price;
   const modalBody = document.getElementById("modal-dynamic-content");
-  
+
+  modalBody.setAttribute("data-active-id", product.id);
+  modalBody.setAttribute("data-active-title", product.title);
+
+  // រៀបចំផ្ទៃដើម៖ ខាងឆ្វេងជា រូបភាពផលិតផល, ខាងស្តាំជា ព័ត៌មាននិងប៊ូតុងបញ្ជា
   modalBody.innerHTML = `
-    <div class="col-md-6 border-end bg-light d-flex align-items-center justify-content-center p-4">
-      <img src="${product.imgSrc}" alt="${product.title}" class="img-fluid rounded" style="max-height: 350px; object-fit: contain;">
+    <div class="col-md-6 border-end bg-light d-flex align-items-center justify-content-center p-4" id="modal-image-panel">
+      <img src="${product.imgSrc}" onerror="this.onerror=null;this.src='${FALLBACK_IMG}';" alt="${product.title}" class="img-fluid rounded" style="max-height: 350px; object-fit: contain;">
     </div>
-    <div class="col-md-6 p-4 d-flex flex-column justify-content-between">
+    <div class="col-md-6 p-4 d-flex flex-column justify-content-between" id="modal-interactive-panel">
       <div>
         <span class="text-muted small fw-semibold">ID: ${product.id}</span>
         <h4 class="fw-bold text-dark mt-1 mb-0">${product.khmerTitle || ''}</h4>
         <h5 class="text-muted mb-3">${product.title}</h5>
-        
+
         <div class="d-flex align-items-center mb-3">
           <div class="text-warning me-2">
             <i class="bi bi-star"></i><i class="bi bi-star"></i><i class="bi bi-star"></i><i class="bi bi-star"></i><i class="bi bi-star"></i>
           </div>
           <span class="text-muted small">(0 Reviews | 0 Orders)</span>
         </div>
-        
+
         <h3 class="fw-bold text-success mb-4">$${product.price.toFixed(2)}</h3>
         <p class="text-muted small mb-4">${product.description}</p>
-        
+
         <div class="d-flex align-items-center mb-4">
           <span class="me-3 fw-medium">Quantity:</span>
           <div class="input-group border rounded" style="width: 130px;">
@@ -254,25 +263,27 @@ function openProductDetail(productId) {
         </div>
 
         <div class="mb-4">
-          <span class="text-muted">Total Price:</span> 
+          <span class="text-muted">Total Price:</span>
           <span class="fw-bold text-dark fs-5 ms-1" id="modal-total-price">$${product.price.toFixed(2)}</span>
           <span class="text-muted small ms-1">(Tax incl.)</span>
         </div>
       </div>
 
       <div class="d-flex gap-2">
-        <button class="btn btn-dark py-2 px-4 w-50 fw-bold" onclick="alert('Order Proceeded!')">Buy now</button>
+        <button class="btn btn-dark py-2 px-4 w-50 fw-bold" onclick="startQrPaymentWorkflow()">Buy now</button>
         <button class="btn btn-success py-2 px-4 w-50 fw-bold" onclick="alert('Added to Cart!')"><i class="bi bi-cart-plus me-2"></i>Add to cart</button>
       </div>
     </div>
   `;
 
-  // Explicitly initialize Bootstrap modal framework view container object instances
-  const targetModal = new bootstrap.Modal(document.getElementById('productDetailModal'));
-  targetModal.show();
+  let modalElement = document.getElementById('productDetailModal');
+  let modalInstance = bootstrap.Modal.getInstance(modalElement);
+  if (!modalInstance) {
+    modalInstance = new bootstrap.Modal(modalElement);
+  }
+  modalInstance.show();
 }
 
-// Helper utility mutation math calculations function toggler logic
 window.updateQty = function(change) {
   const qtyInput = document.getElementById("modal-qty");
   const totalDisplay = document.getElementById("modal-total-price");
@@ -281,10 +292,127 @@ window.updateQty = function(change) {
   let currentQty = parseInt(qtyInput.value) || 1;
   currentQty += change;
 
-  if (currentQty < 1) currentQty = 1; // Bound constraint checks logic boundary values minimum limits
-  
+  if (currentQty < 1) currentQty = 1;
+
   qtyInput.value = currentQty;
   totalDisplay.innerText = `$${(activeProductPrice * currentQty).toFixed(2)}`;
+};
+
+// 4b. Inline QR Payment Core Engine View Rendering Mechanics
+window.startQrPaymentWorkflow = function() {
+  const imagePanel = document.getElementById("modal-image-panel");
+  const interactivePanel = document.getElementById("modal-interactive-panel");
+  const modalBody = document.getElementById("modal-dynamic-content");
+  const qtyInput = document.getElementById("modal-qty");
+
+  if (!imagePanel || !interactivePanel || !modalBody || !qtyInput) return;
+
+  const currentQty = parseInt(qtyInput.value) || 1;
+  const totalPrice = (activeProductPrice * currentQty).toFixed(2);
+  const productId = modalBody.getAttribute("data-active-id");
+  const productTitle = modalBody.getAttribute("data-active-title");
+
+  // ស្វែងរកទិន្នន័យផលិតផលដើម ដើម្បីយកឈ្មោះខ្មែរ និងការពិពណ៌នា
+  const product = products.find(p => p.id === productId);
+
+  // កែប្រែផ្ទៃខាងឆ្វេង៖ បង្ហាញព័ត៌មានលម្អិតសង្ខេប រួមជាមួយរូបភាពផលិតផលនៅខាងក្រោម
+  imagePanel.className = "col-md-6 border-end bg-light p-4 d-flex flex-column justify-content-between";
+  imagePanel.innerHTML = `
+    <div>
+      <span class="badge bg-secondary mb-2">ព័ត៌មានការបញ្ជាទិញ</span>
+      <h5 class="fw-bold text-dark mb-1">${product?.khmerTitle || ''}</h5>
+      <h6 class="text-muted mb-3">${productTitle}</h6>
+      <hr class="my-2 opacity-25">
+      <div class="d-flex justify-content-between small text-muted mb-1">
+        <span>ចំនួន (Quantity):</span>
+        <span class="fw-bold text-dark">${currentQty} ដប/កំប៉ុង/កេះ</span>
+      </div>
+      <div class="d-flex justify-content-between small text-muted">
+        <span>តម្លៃសរុប (Total):</span>
+        <span class="fw-bold text-success">$${totalPrice}</span>
+      </div>
+    </div>
+    <div class="text-center my-auto pt-3">
+      <img src="${product?.imgSrc}" onerror="this.onerror=null;this.src='${FALLBACK_IMG}';" alt="${productTitle}" class="img-fluid rounded shadow-sm bg-white p-2" style="max-height: 180px; object-fit: contain;">
+    </div>
+  `;
+
+  // បង្កើត Payload សម្រាប់ QR 
+  const rawQrPayload = `KHQR-MOCKPAY|Store:MYTHGLORY|Item:${productId}|Qty:${currentQty}|Total:$${totalPrice}`;
+  const qrCodeApiUrl = `https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${encodeURIComponent(rawQrPayload)}&color=003366`;
+
+  // កែប្រែផ្ទៃខាងស្តាំ៖ បង្ហាញតែកូដ QR និងប៊ូតុងសម្រាប់បង់ប្រាក់
+  interactivePanel.innerHTML = `
+    <div class="text-center d-flex flex-column align-items-center justify-content-center h-100 py-2">
+      <div class="mb-2">
+        <span class="badge bg-danger px-3 py-2 rounded-pill fw-bold" style="font-size:0.75rem; letter-spacing:0.5px;">
+          <i class="bi bi-qr-code-scan me-1"></i> KHQR / ABA PAY
+        </span>
+      </div>
+      <p class="text-muted small text-truncate w-100 mb-2">ស្កែនកូដខាងក្រោមដើម្បីទូទាត់ប្រាក់</p>
+
+      <div class="bg-white p-3 border rounded-3 shadow-sm mb-3" style="width:200px; height:200px;">
+         <img src="${qrCodeApiUrl}" alt="Scan QR Code to finish transaction" class="img-fluid" style="width:100%; height:100%;">
+      </div>
+
+      <div class="mb-2">
+        <div class="text-muted small mb-0">ទឹកប្រាក់ត្រូវទូទាត់សរុប</div>
+        <h3 class="fw-bold text-dark mb-0">$${totalPrice}</h3>
+      </div>
+
+      <div class="alert alert-warning py-1 px-3 border-0 small mb-4 rounded-pill" style="font-size: 0.8rem;">
+         <i class="bi bi-hourglass-split me-1"></i> កូដនេះនឹងហួសកំណត់ក្នុង៖ <span id="payment-timer" class="fw-bold">03:00</span>
+      </div>
+
+      <div class="w-100 d-flex gap-2">
+        <button class="btn btn-outline-danger w-50 py-2 btn-sm fw-semibold" onclick="abortQrPayment('${productId}')">
+          <i class="bi bi-x-circle me-1"></i> បោះបង់ (Cancel)
+        </button>
+        <button class="btn btn-primary w-50 py-2 btn-sm fw-bold" onclick="confirmMockPayment()">
+          <i class="bi bi-check2-circle me-1"></i> ខ្ញុំបានបង់ប្រាក់រួច
+        </button>
+      </div>
+    </div>
+  `;
+
+  beginPaymentCountdownClock(180, productId);
+};
+
+function beginPaymentCountdownClock(secondsLeft, productId) {
+  clearInterval(paymentTimerInterval);
+  let timeRemaining = secondsLeft;
+  const timerDisplay = document.getElementById("payment-timer");
+
+  paymentTimerInterval = setInterval(() => {
+    if (timeRemaining <= 0) {
+      clearInterval(paymentTimerInterval);
+      alert("រយៈពេលទូទាត់ប្រាក់បានអស់កំណត់។ សូមព្យាយាមម្តងទៀត។");
+      abortQrPayment(productId);
+      return;
+    }
+    timeRemaining--;
+    const minutes = Math.floor(timeRemaining / 60).toString().padStart(2, '0');
+    const seconds = (timeRemaining % 60).toString().padStart(2, '0');
+    if (timerDisplay) {
+      timerDisplay.textContent = `${minutes}:${seconds}`;
+    }
+  }, 1000);
+}
+
+window.abortQrPayment = function(productId) {
+  clearInterval(paymentTimerInterval);
+  openProductDetail(productId);
+};
+
+window.confirmMockPayment = function() {
+  clearInterval(paymentTimerInterval);
+  alert("🎉 ជោគជ័យ! ប្រព័ន្ធបានទទួលការទូទាត់របស់អ្នករួចរាល់។ ការកម្ម៉ង់ត្រូវបានរក្សាទុក។");
+
+  const modalElement = document.getElementById('productDetailModal');
+  const modalInstance = bootstrap.Modal.getInstance(modalElement);
+  if (modalInstance) {
+    modalInstance.hide();
+  }
 };
 
 // 5. Hooks Setup Initializations Event Routing Pipelines
@@ -294,5 +422,12 @@ window.addEventListener("DOMContentLoaded", () => {
   const searchBar = document.getElementById("product-search");
   if (searchBar) {
     searchBar.addEventListener("input", handleSearch);
+  }
+
+  const modalElement = document.getElementById('productDetailModal');
+  if (modalElement) {
+    modalElement.addEventListener('hidden.bs.modal', () => {
+      clearInterval(paymentTimerInterval);
+    });
   }
 });
