@@ -285,7 +285,7 @@ footer {
 }
 
 footer a:hover {
-  color: var(--brand-accent) !important;
+  color: rgb(0, 225, 255) !important;
   opacity: 1 !important;
 }
 
@@ -297,4 +297,20 @@ footer h5 .text-primary {
 @media (max-width: 768px) {
   .display-3 { font-size: 2.4rem; }
   .lead { font-size: 0.95rem; }
+}
+#product-container .card img {
+  height: 120px;
+  object-fit: cover;
+}
+
+@media (max-width: 576px) {
+  #product-container .card-body {
+    padding: 0.6rem;
+  }
+  #product-container .card-title {
+    font-size: 0.85rem;
+  }
+  #product-container .card-text {
+    font-size: 0.75rem;
+  }
 }

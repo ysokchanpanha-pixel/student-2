@@ -1,279 +1,177 @@
-// 1. Centralized Product Storage Catalog Array
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MYTHGLORY — Premium Beverages & More</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght=300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top custom-navbar">
+    <div class="container d-flex align-items-center justify-content-between flex-nowrap w-100">
+      <a class="navbar-brand d-flex align-items-center fw-bold text-uppercase tracking-wider flex-shrink-0 m-0" href="#">
+        <img src="https://i.pinimg.com/736x/23/4c/52/234c52ee1af62a701565d122f885120a.jpg" onerror="this.style.display='none'" alt="MYTHGLORY Logo" class="me-2 custom-logo rounded">
+        <span class="text-primary">Drink</span>Shop
+      </a>
+
+      <div class="collapse navbar-collapse" id="navbarProfessional">
+        <ul class="navbar-nav ms-auto align-items-center pe-lg-3">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle fw-medium px-3" href="#" id="contactDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">ទំនាក់ទំនង</a>
+            <ul class="dropdown-menu dropdown-menu-start dropdown-menu-lg-end border-0 shadow">
+              <li><a class="dropdown-item py-2 px-3 rounded" href="#"><i class="bi bi-facebook me-2"></i>Facebook</a></li>
+              <li><a class="dropdown-item py-2 px-3 rounded" href="#"><i class="bi bi-twitter-x me-2"></i>Twitter</a></li>
+              <li><a class="dropdown-item py-2 px-3 rounded" href="#"><i class="bi bi-instagram me-2"></i>Instagram</a></li>
+              <li><hr class="dropdown-divider my-2"></li>
+              <li><a class="dropdown-item py-2 px-3 rounded" href="#"><i class="bi bi-geo-alt me-2"></i>Location</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle fw-medium px-3" href="#" id="productDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">ផលិតផល</a>
+            <ul class="dropdown-menu dropdown-menu-start dropdown-menu-lg-end border-0 shadow">
+              <li><a class="dropdown-item py-2 px-3 rounded" href="#">ផលិតផលទាំងអស់</a></li>
+              <li><a class="dropdown-item py-2 px-3 rounded" href="#">ផលិតផលថ្មី</a></li>
+              <li><a class="dropdown-item py-2 px-3 rounded" href="#">បញ្ចុះតម្លៃ</a></li>
+              <li><hr class="dropdown-divider my-2"></li>
+              <li><a class="dropdown-item py-2 px-3 rounded" href="#">ផ្សេង...</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle fw-medium px-3" href="#" id="categoryDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">ប្រភេទផលិតផល</a>
+            <ul class="dropdown-menu dropdown-menu-start dropdown-menu-lg-end border-0 shadow">
+              <li><a class="dropdown-item py-2 px-3 rounded category-filter" href="index.html" data-category="all">ភេសជ្ជៈទាំងអស់</a></li>
+              <li><a class="dropdown-item py-2 px-3 rounded category-filter" href="cofe.html" data-category="coffee">កាហ្វេ</a></li>
+              <li><a class="dropdown-item py-2 px-3 rounded category-filter" href="juice.html" data-category="juice">ទឹកផ្លែឈើ</a></li>
+              <li><a class="dropdown-item py-2 px-3 rounded category-filter" href="drinks.html" data-category="canned">ភេសជ្ជៈកំប៉ុង</a></li>
+              <li><a class="dropdown-item py-2 px-3 rounded category-filter" href="#" data-category="best-seller">លក់ដាច់</a></li>
+              <li><hr class="dropdown-divider my-2"></li>
+              <li><a class="dropdown-item py-2 px-3 rounded category-filter" href="#" data-category="other">ផ្សេង...</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle fw-medium px-3" href="#" id="servicesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">សេវាកម្ម</a>
+            <ul class="dropdown-menu dropdown-menu-start dropdown-menu-lg-end border-0 shadow">
+              <li><a class="dropdown-item py-2 px-3 rounded" href="#">Online Class</a></li>
+              <li><a class="dropdown-item py-2 px-3 rounded" href="#">Class</a></li>
+              <li><a class="dropdown-item py-2 px-3 rounded" href="#">New Course</a></li>
+              <li><hr class="dropdown-divider my-2"></li>
+              <li><a class="dropdown-item py-2 px-3 rounded" href="#">Other</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+
+      <div class="d-flex align-items-center flex-shrink-0 ms-auto style-button-group" style="z-index: 1021;">
+        <a class="btn btn-sm btn-primary rounded-pill px-3 shadow-sm fw-medium me-2" href="#">Login</a>
+        <a class="btn btn-sm btn-outline-primary rounded-pill px-3 shadow-sm fw-medium me-2 d-none d-sm-inline-block" href="#">Sign in</a>
+        <button class="navbar-toggler border-0 shadow-none p-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarProfessional" aria-controls="navbarProfessional" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <div class="position-relative w-100 overflow-hidden bg-dark text-white d-flex align-items-center" style="min-height: 80vh; margin-top: 56px;">
+    <div class="position-absolute top-0 start-0 w-100 h-100 banner-slideshow">
+      <div class="slide" style="background-image: url('https://i.pinimg.com/736x/63/cf/b2/63cfb25637b67f9c48469c7974def1f0.jpg');"></div>
+      <div class="slide" style="background-image: url('https://i.pinimg.com/1200x/8d/7f/c3/8d7fc3beed5179fde64091af34b75c60.jpg');"></div>
+      <div class="slide" style="background-image: url('https://i.pinimg.com/1200x/b5/d3/99/b5d399411d5e3894d7f41a35d185d151.jpg');"></div>
+    </div>
+
+    <div class="position-absolute top-0 start-0 w-100 h-100 hero-overlay" style="z-index: 1;"></div>
+
+    <div class="container position-relative py-5 text-center text-md-start" style="z-index: 2;">
+      <div class="row">
+        <div class="col-md-8 col-lg-6">
+          <span class="badge bg-primary px-3 py-2 rounded-pill mb-3 text-uppercase tracking-wider fw-semibold">Now Live</span>
+          <h1 class="display-3 fw-bold mb-3 tracking-tight">Premium Drinks, <br>Delivered <span class="text-info">Fresh</span></h1>
+          <p class="lead text-light opacity-75 mb-4">
+            Discover our full range of coffee, juices, canned beverages and best-sellers — curated for quality and great taste, all in one place.
+          </p>
+          <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+            <button type="button" class="btn btn-info btn-lg px-4 me-md-2 fw-semibold" onclick="document.getElementById('product-search').scrollIntoView({behavior:'smooth', block:'center'}); document.getElementById('product-search').focus();">Explore Now</button>
+            <button type="button" class="btn btn-outline-light btn-lg px-4" onclick="document.getElementById('product-container').scrollIntoView({behavior:'smooth'});">Learn More</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container my-5 text-center">
+    <h1 class="display-5 fw-bold border-bottom d-inline-block pb-2 text-dark">ផលិតផល</h1>
+
+    <div class="row justify-content-center mt-4">
+      <div class="col-md-6 col-11">
+        <div class="input-group shadow-sm rounded-pill overflow-hidden border">
+          <span class="input-group-text bg-white border-0 pe-1"><i class="bi bi-search text-muted"></i></span>
+          <input type="text" id="product-search" class="form-control border-0 ps-2 py-2" placeholder="ស្វែងរកផលិតផល... (Search products)">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Note: Changed row-cols-1 to row-cols-2 below for two cards on mobile -->
+  <div class="container mb-5">
+    <div class="row row-cols-2 row-cols-sm-2 row-cols-md-4 g-3 g-md-4" id="product-container">
+    </div>
+  </div>
+
+  <div class="modal fade" id="productDetailModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content border-0 shadow rounded-4 overflow-hidden">
+        <div class="modal-body p-0">
+          <div class="position-relative">
+            <button type="button" class="btn-close position-absolute top-0 end-0 m-3 bg-white p-2 rounded-circle shadow-sm" data-bs-dismiss="modal" aria-label="Close" style="z-index: 10;"></button>
+          </div>
+          <div class="row g-0" id="modal-dynamic-content">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="bg-dark text-light py-5 mt-5">
+    <div class="container">
+      <div class="row gy-4">
+        <div class="col-md-4">
+          <h5 class="fw-bold mb-3"><span class="text-primary">MYTH</span>GLORY</h5>
+          <p class="text-light opacity-75 small">Your trusted source for premium beverages — coffee, juices, canned drinks and more, delivered with quality you can taste.</p>
+        </div>
+        <div class="col-md-4">
+          <h6 class="fw-bold mb-3">Quick Links</h6>
+          <ul class="list-unstyled small">
+            <li class="mb-2"><a href="#" class="text-light text-decoration-none opacity-75">ផលិតផលទាំងអស់</a></li>
+            <li class="mb-2"><a href="#" class="text-light text-decoration-none opacity-75">ផលិតផលថ្មី</a></li>
+            <li class="mb-2"><a href="#" class="text-light text-decoration-none opacity-75">បញ្ចុះតម្លៃ</a></li>
+            <li class="mb-2"><a href="#" class="text-light text-decoration-none opacity-75">សេវាកម្ម</a></li>
+          </ul>
+        </div>
+        <div class="col-md-4">
+          <h6 class="fw-bold mb-3">ទំនាក់ទំនង</h6>
+          <div class="d-flex gap-3 fs-5">
+            <a href="#" class="text-light opacity-75"><i class="bi bi-facebook"></i></a>
+            <a href="#" class="text-light opacity-75"><i class="bi bi-twitter-x"></i></a>
+            <a href="#" class="text-light opacity-75"><i class="bi bi-instagram"></i></a>
+            <a href="#" class="text-light opacity-75"><i class="bi bi-geo-alt"></i></a>
+          </div>
+        </div>
+      </div>
+      <hr class="border-secondary mt-4">
+      <p class="text-center small text-light opacity-50 mb-0">&copy; 2026 MYTHGLORY. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // 1. Centralized Product Storage Catalog Array
 const products = [
   {
-    id: "PROD-001",
-    title: "Cambodia Cola 330ml x 24Can",
-    khmerTitle: "កម្ពុជាកូឡា ៣៣០មល កេះ",
-    description: "Refreshing authentic flavor, packed in a full case of 24 convenient cans.",
-    price: 1.75,
-    imgSrc: "https://camhappymart.com/storage/app/public/product/thumbnail/2025-10-22-68f8b9a2300d0.png"
-  },
-  {
-    id: "PROD-002",
-    title: "Angkor water  330ml",
-    khmerTitle: "ទឹកសុទ្ធ​កម្ពុជា",
-    description: "The official national water of Cambodia, offering a smooth and crisp taste profile.",
-    price: 0.75,
-    imgSrc: "https://storage.googleapis.com/takeapp/media/cmkb6uwte000004l44ti23tbx.png"
-  },
-  {
-    id: "PROD-003",
-    title: "White cocala 330ml",
-    khmerTitle: "កូកាកូឡា",
-    description: "Crafted with premium ingredients, delivering an ultra-smooth finish in every sip.",
-    price: 1.50,
-    imgSrc: "https://www.coca-cola.com/content/dam/onexp/kh/en/brands/coca-cola/coca-cola-light.png/width1960.png"
-  },
-  {
-    id: "PROD-004",
-    title: "cambodai cola 120ml",
-    khmerTitle: "កម្ពុជាកូឡា 120ml",
-    description: "Locally produced mineral water treated with advanced filtration for pure hydration.",
-    price: 0.75,
-    imgSrc: "https://camhappymart.com/storage/app/public/product/2025-10-22-68f8b9d9728ce.webp"
-  },
-  {
-    id: "PROD-005",
-    title: "Express drink 250ml",
-    khmerTitle: "អេចប្រេស 250ml",
-    description: "Popular Korean formulation energizer rich in taurine and vital B vitamins.",
-    price: 1.00,
-    imgSrc: "https://www.monde-selection.com/wp-content/uploads/2024/05/1041890.png"
-  },
-  {
-    id: "PROD-006",
-    title: "Coca-Cola original taste bottle 150ml",
-    khmerTitle: "កូកាកូឡា រសជាតិដើម 150ml",
-    description: "A classic Asian botanical beverage, naturally sweetened to cool you down instantly.",
-    price: 1.01,
-    imgSrc: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHguxuWCpApinQFedDrBG-9bAPjyoVeTSUkoS6JqO8vg&s=10"
-  },
-  {
-    id: "PROD-007",
-    title: "Cambodai beer 330ml",
-    khmerTitle: "ស្រាបៀរកម្ពុជា 330ml",
-    description: "The timeless, delicious flavor of real Coca-Cola enjoyed all around the globe.",
-    price: 1.01,
-    imgSrc: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTSx_4LRhCLbwmUEdtTMvHHqYJFwybKdL8U-JI5PpBLqA&s=10"
-  },
-  {
-    id: "PROD-008",
-    title: "Bacas Energy Drink  250ml",
-    khmerTitle: "ភេសជ្ជៈ ប៉ូវកំលាំង​​​​ បាសកាស",
-    description: "An electrifying burst of strawberry flavor combined with a powerful energy blend.",
-    price: 1.20,
-    imgSrc: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5AONNz21uZCzGu5mStlV3s9nkVlfDSCG_A9vF_eaPn4NvEb6Jtyg1chM&s=10"
-  },
-  {
-    id: "PROD-009",
-    title: "Yellow Sting Drink 250ml",
-    khmerTitle: "ស្ទីងលឿង 250ml",
-    description: "Organic brewed green tea leaves mixed perfectly with sweet honey and sour lemon.",
-    price: 1.01,
-    imgSrc: "https://hongphatfood.com/wp-content/uploads/2023/06/sting-gold-can-320ml2.jpg"
-  },
-  {
-    id: "PROD-010",
-    title: "Angkor Milk 330ml",
-    khmerTitle: "ទឹកដោះគោអង្គរមៀល 330ml",
-    description: "Distinctive and nostalgic herbal sarsaparilla flavor with a fizzy kick.",
-    price: 0.50,
-    imgSrc: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9VFWD21Umz_E_bVnp7LUbA5Q1iZqVjKYtnJO1jwH_BNABVMsfHrv-iFCZ&s=10"
-  },
-  {
-    id: "PROD-011",
-    title: "NESCAFÉ Dark Roast Classic Jar",
-    khmerTitle: "កាហ្វេ ណេសកាហ្វេ ដបធំពិសេស",
-    description: "Rich, bold instant coffee — bonus jar included for unbeatable everyday value.",
-    price: 8.90,
-    imgSrc: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcShOGAMiPIca2brODAQ5KicBWTdT_B4KrB2Qt_ttVvAI-THZ28fwLTKkLf5&s=10"
-  },
-  {
-    id: "PROD-012",
-    title: "Fanta 240ml",
-    khmerTitle: "ហ្វាន់តា 240ml",
-    description: "A silky, smooth beverage pairing real fruit juice aroma with rich, creamy milk.",
-    price: 0.85,
-    imgSrc: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSvOZu0k-X7VVj9VMWLTRsgYrH87tk3OE5xi5uT2uBukw&s=101606906242TxMRnddl.jpg"
-  },
-  {
-    id: "PROD-013",
-    title: "Champoin 240ml",
-    khmerTitle: "ឆេមពាន 240ml",
-    description: "The ideal blend of premium coffee, creamer, and sugar in quick single-serve sticks.",
-    price: 4.50,
-    imgSrc: "https://i.pinimg.com/1200x/7f/a6/a9/7fa6a91c08a43e5890830e3d17ece72e.jpg"
-  },
-  {
-    id: "PROD-014",
-    title: "Bostrong 240ml",
-    khmerTitle: "បូស្ត្រុង 240ml",
-    description: "Golden roasted Arabica beans delivering a velvety layer of authentic crema texture.",
-    price: 6.20,
-    imgSrc: "https://i.pinimg.com/736x/39/10/30/3910305ca577a91262c0e7e32a7f84fb.jpg"
-  },
-  {
-    id: "PROD-015",
-    title: "Dash 240ml",
-    khmerTitle: "ដាហ្ស",
-    description: "A low-calorie, crisp black coffee drink formulated to give a quick, refreshing wake-up.",
-    price: 0.90,
-    imgSrc: "https://i.pinimg.com/736x/47/5c/7c/475c7cff6a02cd630797dcacf7df112e.jpg"
-  },
-  {
-    id: "PROD-016",
-    title: "Red bull 240ml",
-    khmerTitle: "រេតប៉ូល 240ml",
-    description: "An extra-milky premium blend carefully crafted for espresso coffee lovers.",
-    price: 4.80,
-    imgSrc: "https://i.pinimg.com/1200x/62/f1/3c/62f13c82bcd7d05bb6877f48dfe8f445.jpg"
-  },
-  {
-    id: "PROD-017",
-    title: "Yeo's 180ml",
-    khmerTitle: "យ៉ូស​​ 180ml",
-    description: "Indulgent coffee treat topped with a thick, luxurious layer of dairy froth.",
-    price: 5.10,
-    imgSrc: "https://i.pinimg.com/736x/a5/0e/63/a50e6346dc4b887487de2cd7bb48ea8c.jpg"
-  },
-  {
-    id: "PROD-018",
-    title: "NESCAFÉ Americano Zero Sugar",
-    khmerTitle: "កាហ្វេ អាមេរីកាណូ អត់ស្ករ កំបំុង",
-    description: "Pure, uncompromising iced black coffee without any sugar additions for clean energy.",
-    price: 0.95,
-    imgSrc: "https://i.pinimg.com/1200x/a3/5e/2a/a35e2a652da73ce4bf917e1eed0fe2b4.jpg"
-  },
-  {
-    id: "PROD-019",
-    title: "Special Mocha Caramel Twin",
-    khmerTitle: "កាហ្វេ ម៉ូកា ការ៉ាមែល ឈ្ងុយពិសេស",
-    description: "A harmonious marriage of decadent chocolate, sweet caramel, and bold coffee flavors.",
-    price: 5.50,
-    imgSrc: "https://i.pinimg.com/736x/a3/2c/be/a32cbe0fbf478ad276f189643ff96009.jpg"
-  },
-  {
-    id: "PROD-020",
-    title: "Yeo's 180ml",
-    khmerTitle: "យ៉ូស​​ 180ml",
-    description: "All the deep, fully-realized flavor you love from coffee, completely without caffeine.",
-    price: 7.90,
-    imgSrc: "https://i.pinimg.com/1200x/32/6f/33/326f33f464cc02103177799e693f932c.jpg"
-  },
-
-   {
-    id: "PROD-001",
-    title: "Instant coffee",
-    khmerTitle: "កាហ្វេ",
-    description: "Refreshing authentic flavor, packed in a full case of 24 convenient cans.",
-    price: 8.75,
-    imgSrc: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgNfzK-g9FOqI9CBttc_G93K47VkRgoHPBpBwVSzQHmA&s=10https://camhappymart.com/storage/app/public/product/thumbnail/2025-10-22-68f8b9a2300d0.png"
-  },
-  {
-    id: "PROD-002",
-    title: "Brand: Benchmark USA 250g",
-    khmerTitle: "កាហ្វេប៊ិន",
-    description: "The official national water of Cambodia, offering a smooth and crisp taste profile.",
-    price: 0.75,
-    imgSrc: "https://benchmarkooty.com/wp-content/uploads/2024/04/coffee-nilgiri-benchmark-ooty-filter-coffee-250gm.jpg"
-  },
-  {
-    id: "PROD-003",
-    title: "NESCAFE Classic 200g",
-    khmerTitle: "នេសកាហ្វេ",
-    description: "Crafted with premium ingredients, delivering an ultra-smooth finish in every sip.",
-    price: 11.50,
-    imgSrc: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwpll875f3jwh3B1q5lwUTEL5V7Kb3I6TXAc8QC7rPdlcPBk6dsT6uq9o&s=10"
-  },
-  {
-    id: "PROD-004",
-    title: "Mondulkiri CAFE ",
-    khmerTitle: "កាហ្វេ​​​មណ្ឌលគិរី សំពោច(អារាបីកា+រ៉ូប៉ូស្តារ)",
-    description: "Locally produced mineral water treated with advanced filtration for pure hydration.",
-    price: 0.25,
-    imgSrc: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQkjNFdZMSVo2bI35Hql1_CDLoavkqDHw1UIvmHO2jc0S3d06eO4HVdCRO&s=10"
-  },
-  {
-    id: "PROD-005",
-    title: "MONDULKIRI COFFEE 3 IN 1 ORIGINAL FLAVOUR",
-    khmerTitle: "កាហ្វេ​​​មណ្ឌលគិរី 3 IN 1 រសជាតិដើម",
-    description: "Popular formulation energizer rich in taurine and vital B vitamins.",
-    price: 0.65,
-    imgSrc: "https://aeoncambodia.sgp1.digitaloceanspaces.com/image/catalog/product/8847100501257b.jpg"
-  },
-  {
-    id: "PROD-006",
-    title: "MONDULKIRI COFFEE 100% PURE ARABICA",
-    khmerTitle: "កាហ្វេមណ្ឌលគិរីសុទ្ធ ១០០%",
-    description: "A classic Asian botanical beverage, naturally sweetened to cool you down instantly.",
-    price: 9.20,
-    imgSrc: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7geQaaWjo4Nn7GWO5OHVNvzvh_fuXWr-HXsLW6CVAFA&s=10"
-  },
-  {
-    id: "PROD-007",
-    title: "MONDULKIRI COFFEE SUGAR FREE",
-    khmerTitle: "កាហ្វេ​​​មណ្ឌលគិរី សំពោច(អារាបីកា)",
-    description: "The timeless, delicious flavor of real Coca-Cola enjoyed all around the globe.",
-    price: 0.55,
-    imgSrc: "https://aeoncambodia.sgp1.digitaloceanspaces.com/image/catalog/product/8847100509048bv.jpg"
-  },
-   {
-    id: "PROD-001",
-    title: "Krud Energy Drink - Gold Quality Award 2026 from Monde Selection",
-    khmerTitle: "​ភេសជ្ជគ្រុឌ - រង្វាន់គុណភាពមាស ២០២៦ ពី Monde Selection",
-    description: "Refreshing authentic flavor, packed in a full case of 24 convenient cans.",
-    price: 8.75,
-    imgSrc: "https://www.monde-selection.com/wp-content/uploads/2026/05/1045923-768x768.png"
-  },
-  {
-    id: "PROD-002",
-    title: "Brand Sprite 500ml",
-    khmerTitle: "ស្ព្រាយ 500ml",
-    description: "The official national water of Cambodia, offering a smooth and crisp taste profile.",
-    price: 0.75,
-    imgSrc: "https://www.coca-cola.com/content/dam/onexp/kh/en/brands/sprite/kh-en-sprite.png"
-  },
-  {
-    id: "PROD-003",
-    title: "Vigor Driks",
-    khmerTitle: "វីហ្គរ",
-    description: "Crafted with premium ingredients, delivering an ultra-smooth finish in every sip.",
-    price: 11.50,
-    imgSrc: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS13KGBLv9A14VSDQpGj0KWtGrdq0wszvTOJOelprNCOQ&s=10"
-  },
-  {
-    id: "Khmer Beverages – Chip Mong Group",
-    title: "ICE-Drinks",
-    khmerTitle: "អាយស",
-    description: "Locally produced mineral water treated with advanced filtration for pure hydration.",
-    price: 0.25,
-    imgSrc: "https://www.chipmong.com/wp-content/uploads/2020/05/2.jpg"
-  },
-  {
-    id: "KIT]Best selling energy drink in Cambodia | WACA | Web Analytics",
-    title: "Bacas-120ml",
-    khmerTitle: "បាកាស​-១២០មល",
-    description: "Popular Korean formulation energizer rich in taurine and vital B vitamins.",
-    price: 0.65,
-    imgSrc: "https://www.waca.associates/en/wp-content/uploads/2021/02/unnamed.jpg"
-  },
-  {
-    id: "PROD-006",
-    title: "Coca-Cola original taste bottle 150ml",
-    khmerTitle: "កូកាកូឡា រសជាតិដើម 150ml",
-    description: "A classic Asian botanical beverage, naturally sweetened to cool you down instantly.",
-    price: 9.20,
-    imgSrc: "https://foodpanda.dhmedia.io/image/product-information-management/68b7fbd03b405cf6b42b48c9.jpg?height=176"
-  },
-  {
-    id: "Cambodia Energy Drink - Gold Quality Award 2026 from Monde",
-    title: "work-drinks",
-    khmerTitle: "វឺក",
-    description: "The timeless, delicious flavor of real Coca-Cola enjoyed all around the globe.",
-    price: 0.55,
-    imgSrc: "https://www.monde-selection.com/wp-content/uploads/2026/05/1046874-768x768.png"
-  },
-   {
     id: "FRESHY 100% ORANGE JUICE 330ML - KHMER PRODUCTS |",
     title: "FTESHY DRINK​​-120ml",
     khmerTitle: "ហ្វេសសី-120ml",
@@ -632,3 +530,6 @@ window.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
+  </script>
+</body>
+</html>
