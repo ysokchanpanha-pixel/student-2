@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MYTHGLORY — Premium Beverages & More</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="demo.css">
+</head>
+<body>
+
+  <div id="pageLoader">
+    <i class="bi bi-shield-shaded loader-seal"></i>
+  </div>
+
+  <div class="toast-container position-fixed bottom-0 end-0 p-3" style="z-index: 2000;"></div>
+
+  <nav class="navbar navbar-expand-lg navbar-myth fixed-top py-0">
+    <div class="container h-100 d-flex align-items-center position-relative">
+      
+      <button class="navbar-toggler border-0 order-1 p-0 me-3 shadow-none bg-transparent" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMythMain" aria-controls="navbarMythMain" aria-expanded="false" aria-label="Toggle Navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <a class="brand-mark text-uppercase font-display order-2 order-lg-1 me-0 me-lg-3" href="#">
+        <i class="bi bi-shield-shaded text-primary fs-4 me-2"></i>
+        <span class="brand-name d-inline-block">Myth<span class="text-primary">Glory</span></span>
+      </a>
+
+      <div class="d-flex align-items-center ms-auto order-3 order-lg-4 gap-2">
+        <button class="icon-btn" id="themeToggleBtn" title="Toggle Appearance Profile Mode">
+          <i class="bi bi-moon-stars"></i>
+        </button>
+        <div class="dropdown">
+          <button class="icon-btn" id="currencyMenuBtn" data-bs-toggle="dropdown" aria-expanded="false" title="Switch Display Currency Profile">
+            <span class="fw-bold small" id="currentCurrencyDisplay">USD</span>
+          </button>
+          <ul class="dropdown-menu dropdown-menu-end border-0 shadow-lg p-2" aria-labelledby="currencyMenuBtn">
+            <li><button class="dropdown-item rounded currency-select-btn active" data-currency="USD">USD ($)</button></li>
+            <li><button class="dropdown-item rounded currency-select-btn" data-currency="KHR">KHR (៛)</button></li>
+          </ul>
+        </div>
+        <button class="icon-btn" data-bs-toggle="offcanvas" data-bs-target="#wishlistOffcanvas" aria-controls="wishlistOffcanvas" title="View Tracked Products Wishlist Box">
+          <i class="bi bi-heart"></i>
+          <span class="badge-count" id="wishlistBadgeCount">0</span>
+        </button>
+        <button class="icon-btn" data-bs-toggle="offcanvas" data-bs-target="#cartOffcanvas" aria-controls="cartOffcanvas" title="Review Appended Cart Items Bucket Store">
+          <i class="bi bi-bag"></i>
+          <span class="badge-count" id="cartBadgeCount">0</span>
+        </button>
+        <div id="authNavbarWrapper" class="d-flex align-items-center gap-2 ms-1">
+          </div>
+      </div>
+
+      <div class="collapse navbar-collapse order-4 order-lg-2 w-100 mt-2 mt-lg-0" id="navbarMythMain">
+        
+        <div class="ms-lg-3 my-3 my-lg-0 flex-grow-1" style="max-width: 360px;">
+          <div class="input-group bg-white rounded-pill px-3 py-1 align-items-center border search-input-box">
+            <input type="text" id="globalNavSearchInput" class="form-control bg-transparent border-0 ps-2 py-1 shadow-none" placeholder="Search catalog...">
+            <button class="btn btn-gold rounded-circle d-flex align-items-center justify-content-center p-0 ms-2" type="button" style="width: 32px; height: 32px; transform:none; box-shadow:none;">
+              <i class="bi bi-search fs-6 text-dark"></i>
+            </button>
+          </div>
+        </div>
+
+        <ul class="navbar-nav ms-auto align-items-lg-center ps-lg-3">
+          <li class="nav-item"><a class="nav-link-myth active" href="#" onclick="window.scrollTo({top:0, behavior:'smooth'});">Home</a></li>
+          <li class="nav-item"><a class="nav-link-myth" href="#" onclick="document.getElementById('catalogMainSectionDeck').scrollIntoView({behavior:'smooth'});">Products</a></li>
+          <li class="nav-item"><a class="nav-link-myth" href="#" data-bs-toggle="modal" data-bs-target="#receiptHistoryModalHub">Receipts</a></li>
+        </ul>
+      </div>
+
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="hero-slide active slide-1"></div>
+    <div class="hero-slide slide-2"></div>
+    <div class="hero-slide slide-3"></div>
+    <div class="hero-slide slide-4"></div>
+
+    <div class="hero-overlay"></div>
+
+    <div class="container hero-content">
+      <div class="row">
+        <div class="col-xl-7 col-lg-9 text-start">
+          <i class="bi bi-shield-shaded hero-emblem"></i>
+          <span class="eyebrow d-block mb-2 text-warning">Premium Craft Breweries & Apothecary</span>
+          <h1 class="hero-title font-display">PREMIUM DRINKS,<br>DELIVERED <span class="text-warning">FRESH</span></h1>
+          <p class="hero-subtitle">Discover our curated elite catalog of premium coffees, wild juices, mineral tonics, and signature blends crafted to perfection.</p>
+          <div class="hero-cta">
+            <button class="btn btn-gold btn-lg px-4 rounded-pill font-display" onclick="document.getElementById('catalogMainSectionDeck').scrollIntoView({behavior:'smooth'});">Explore Catalog</button>
+            <button class="btn btn-ghost-myth btn-lg px-4 rounded-pill text-white border-white" onclick="document.getElementById('brandManifestoSection').scrollIntoView({behavior:'smooth'});">Our Story</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-dots">
+      <button class="hero-dot-indicator active" data-slide-target="0"></button>
+      <button class="hero-dot-indicator" data-slide-target="1"></button>
+      <button class="hero-dot-indicator" data-slide-target="2"></button>
+      <button class="hero-dot-indicator" data-slide-target="3"></button>
+    </div>
+
+    <div class="scroll-cue">
+      <span>Scroll Down</span>
+      <i class="bi bi-chevron-down"></i>
+    </div>
+  </header>
+
+  <section class="section bg-sunken-myth border-bottom border-top" id="brandManifestoSection">
+    <div class="container text-center">
+      <div class="seal-divider">
+        <div class="line"></div>
+        <i class="bi bi-shield-shaded seal-icon"></i>
+        <div class="line"></div>
+      </div>
+      <span class="eyebrow">The Seal Of Pure Excellence</span>
+      <h2 class="section-title font-display mt-2">Meticulously Sourced, Exceptionally Refined</h2>
+      <p class="section-lead mx-auto text-muted">Every formula present inside our apothecary collection carries an unyielding signature seal ensuring local ecological purity, exceptional freshness profiles, and peerless premium taste characteristics.</p>
+    </div>
+  </section>
+
+  <section class="section" id="catalogMainSectionDeck">
+    <div class="container">
+      
+      <div class="shop-toolbar mb-4">
+        <div class="row g-3 align-items-center justify-content-between">
+          <div class="col-lg-4 col-md-6">
+            <div class="input-group">
+              <span class="input-group-text"><i class="bi bi-search"></i></span>
+              <input type="text" id="inlineToolbarSearchField" class="form-control" placeholder="Search product name, details...">
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <div class="input-group">
+              <span class="input-group-text"><i class="bi bi-sort-down"></i></span>
+              <select id="catalogSortSelectorDeck" class="form-select">
+                <option value="default" selected>Default Ordering</option>
+                <option value="price-asc">Price: Low to High</option>
+                <option value="price-desc">Price: High to Low</option>
+                <option value="rating-desc">Highest Rated Reviews</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <div class="d-flex align-items-center gap-2 mt-3 overflow-x-auto pb-2 flex-nowrap" id="categoryHorizontalChipsStripRow">
+          <button class="filter-chip active" data-category-target="all">All Beverages</button>
+          <button class="filter-chip" data-category-target="coffee">Signature Coffee</button>
+          <button class="filter-chip" data-category-target="tea">Artisanal Tea Extracts</button>
+          <button class="filter-chip" data-category-target="juice">Cold-Pressed Juices</button>
+          <button class="filter-chip" data-category-target="energy">Tonics & Energy</button>
+          <button class="filter-chip" data-category-target="merch">Premium Accessories</button>
+        </div>
+
+        <div class="results-meta mt-3 d-flex justify-content-between align-items-center">
+          <div>Showing <span id="displayedCatalogCountTextLabel" class="fw-bold text-dark">0</span> items matching parameters</div>
+          <div id="activeFilterNotificationResetContainer" class="d-none">
+            <button class="btn btn-sm btn-ghost-myth text-danger border-danger py-1 px-2" id="clearActiveFiltersActionBtn"><i class="bi bi-x-circle me-1"></i>Reset Parameters</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="row row-cols-2 row-cols-md-3 row-cols-lg-4 g-3 g-md-4 product-grid" id="globalProductCardContainerGridInjectionNode">
+        </div>
+
+    </div>
+  </section>
+
+  <div class="modal fade modal-myth" id="productInspectionModalHub" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content overflow-hidden border-0 shadow-2xl">
+        <div class="modal-body p-0" id="dynamicInspectionModalContentInjectionHook">
+          </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade modal-myth" id="authGatewayModalHub" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-md">
+      <div class="modal-content border-0 p-4 shadow-2xl">
+        <div class="modal-header border-0 pb-0 position-relative">
+          <h4 class="modal-title font-display fw-bold text-dark w-100 text-center" id="authGatewayModalTitleLabelText">Access Identity Gateway</h4>
+          <button type="button" class="btn-close position-absolute top-0 end-0 m-1 shadow-none" data-bs-dismiss="modal" aria-label="Close Portal View Window Container Panel Node Instance"></button>
+        </div>
+        <div class="modal-body pt-3" id="authGatewayModalBodyWrapper">
+          </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade modal-myth" id="receiptHistoryModalHub" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg modal-dialog-scrollable">
+      <div class="modal-content border-0 shadow-2xl p-3">
+        <div class="modal-header border-bottom">
+          <h4 class="modal-title font-display fw-bold text-dark"><i class="bi bi-clock-history text-warning me-2"></i>Purchase Receipts & History Archive</h4>
+          <button type="button" class="btn-close shadow-none" data-bs-dismiss="modal" aria-label="Close History Portal Frame Container Node Layer Context Instance Component"></button>
+        </div>
+        <div class="modal-body py-3" id="receiptsHistoryListingRootAnchorHook">
+          </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="offcanvas offcanvas-end offcanvas-myth" tabindex="-1" id="cartOffcanvas" aria-labelledby="cartOffcanvasTitleLabelHeader">
+    <div class="offcanvas-header d-flex align-items-center justify-content-between">
+      <h5 class="offcanvas-title font-display fw-bold text-dark" id="cartOffcanvasTitleLabelHeader"><i class="bi bi-bag-check text-primary me-2"></i>Your Basket Storage</h5>
+      <button type="button" class="btn-close text-reset shadow-none" data-bs-dismiss="offcanvas" aria-label="Dismiss Sheet Slide Selector Component Draw Panel Node Module Object Overlay Element Container"></button>
+    </div>
+    <div class="offcanvas-body d-flex flex-column" id="cartOffcanvasDataStreamingContentHook">
+      </div>
+  </div>
+
+  <div class="offcanvas offcanvas-end offcanvas-myth" tabindex="-1" id="wishlistOffcanvas" aria-labelledby="wishlistOffcanvasTitleLabelHeader">
+    <div class="offcanvas-header d-flex align-items-center justify-content-between">
+      <h5 class="offcanvas-title font-display fw-bold text-dark" id="wishlistOffcanvasTitleLabelHeader"><i class="bi bi-heart text-danger me-2"></i>Tracked Wishlist Collection</h5>
+      <button type="button" class="btn-close text-reset shadow-none" data-bs-dismiss="offcanvas" aria-label="Dismiss Sheet Side Panel Container View Object Layer Slider Control Matrix Box Trigger Context Component Instance"></button>
+    </div>
+    <div class="offcanvas-body d-flex flex-column" id="wishlistOffcanvasDataStreamingContentHook">
+      </div>
+  </div>
+
+  <footer class="footer-myth border-top">
+    <div class="container">
+      <div class="row gy-4 pb-5">
+        <div class="col-lg-4 col-md-6 text-md-start text-center">
+          <h5 class="font-display fw-bold text-white mb-3"><i class="bi bi-shield-shaded text-warning me-2"></i>Myth<span class="text-warning">Glory</span></h5>
+          <p class="small opacity-75 pe-lg-4 text-secondary">An elite aesthetic sanctuary supplying premium apothecary-styled botanical extractions, wild craft coffees, and unique luxury beverage labels directly to global collectors.</p>
+          <div class="d-flex justify-content-center justify-content-md-start gap-2 mt-4">
+            <a href="#" class="footer-social"><i class="bi bi-facebook"></i></a>
+            <a href="#" class="footer-social"><i class="bi bi-telegram"></i></a>
+            <a href="#" class="footer-social"><i class="bi bi-instagram"></i></a>
+            <a href="#" class="footer-social"><i class="bi bi-geo-alt"></i></a>
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-3 col-6 text-md-start text-center">
+          <h6 class="font-display small text-uppercase tracking-wider mb-3">Directory Nav</h6>
+          <ul class="small opacity-75">
+            <li><a href="#" onclick="window.scrollTo({top:0, behavior:'smooth'});">Home Engine Dashboard</a></li>
+            <li><a href="#" onclick="document.getElementById('catalogMainSectionDeck').scrollIntoView({behavior:'smooth'});">Products Catalog Matrix</a></li>
+            <li><a href="#" data-bs-toggle="modal" data-bs-target="#receiptHistoryModalHub">Receipt History Archive</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-2 col-md-3 col-6 text-md-start text-center">
+          <h6 class="font-display small text-uppercase tracking-wider mb-3">Categories Grid</h6>
+          <ul class="small opacity-75">
+            <li><a href="#" onclick="document.getElementById('catalogMainSectionDeck').scrollIntoView({behavior:'smooth'});">Signature Roasted Coffee</a></li>
+            <li><a href="#" onclick="document.getElementById('catalogMainSectionDeck').scrollIntoView({behavior:'smooth'});">Cold-Pressed Fruit Extracts</a></li>
+            <li><a href="#" onclick="document.getElementById('catalogMainSectionDeck').scrollIntoView({behavior:'smooth'});">Artisanal Functional Tonics</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-4 col-md-12 text-lg-start text-center">
+          <h6 class="font-display small text-uppercase tracking-wider mb-3">The Apothecary Telegram Newsletter Dispatch</h6>
+          <p class="small opacity-75 text-secondary">Join the luxury dispatch circular vector pipeline to receive immediate inventory drops, stock updates, and premium pricing profiles directly inside your channel.</p>
+          <div class="newsletter-form mt-3">
+            <div class="input-group rounded-pill overflow-hidden border" style="border-color: rgba(255,255,255,0.15) !important;">
+              <input type="email" class="form-control bg-transparent text-white border-0 ps-3 py-2 shadow-none small" placeholder="Enter channel email vector...">
+              <button class="btn btn-gold px-4 font-display" type="button">Subscribe</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom text-center text-secondary border-top pt-4">
+        <p class="mb-0">© 2026 MYTHGLORY Corporation Co., Ltd. All Premium Design Configurations Reserved Under Strict Global Intellectual Architecture Formulates.</p>
+      </div>
+    </div>
+  </footer>
+
+  <button class="back-to-top" id="globalBackToTopTriggerBtn" title="Return to Core Navigation Menu Deck Viewpoint Hub Location">
+    <i class="bi bi-arrow-up-short fs-4"></i>
+  </button>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="demo.js"></script>
+</body>
+</html>
